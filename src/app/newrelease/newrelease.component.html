@@ -1,0 +1,23 @@
+<div *ngFor="let newReleaseData of newReleaseItem" class="card-content">
+  <div class="container">
+    <input class="form-control" id="myInput" type="text" placeholder="Filter...">
+    <br>
+    <ul class="list-group" id="myList">
+      <li class="list-group-item">500-700</li>
+      <li class="list-group-item">700-900</li>
+      <li class="list-group-item">5100-55000</li>
+      <li class="list-group-item">21000-2500</li>
+      </ul>    
+    <div class="d-flex flex-wrap bg-light">
+  <div  class="set-img" >
+  <div class="image-align"(click)="imgClick(newReleaseData)">
+  <!-- <img class="product-image" src="./assets/img/{{newReleaseData.product_img}}"> -->
+</div>
+  <!-- <h5>{{newReleaseData.product_name}}</h5>
+  <h6>MRP : {{newReleaseData.product_mrp}}</h6>
+  <h6>Price : {{newReleaseData.product_price}}</h6> -->
+</div>
+</div>
+</div>
+</div>
+

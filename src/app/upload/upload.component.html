@@ -1,0 +1,63 @@
+             <!-- <div class="card-header py-1 ">
+             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  </nav>
+                </div> -->
+            
+              <div class="card-body">
+               <form #inputData="ngForm" (ngSubmit)="uploadFormData()" enctype="multipart/form-data"> 
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form11Example1" class="form-control" name="p_name" ngModel/>
+                      <label class="form-label" for="form11Example1">Product Name</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="number" id="form11Example2" class="form-control" name="p_price" ngModel/>
+                      <label class="form-label" for="form11Example2">Product Price</label>
+                    </div>
+                 <div class="form-outline mb-4">
+                  <input type="number" id="form11Example3" class="form-control" name="p_mrp" ngModel/>
+                  <label class="form-label" for="form11Example3">Product MRP Price</label>
+                </div> 
+                <div class="form-outline mb-4">
+                  <input type="number" id="form11Example5" class="form-control" name="p_discount" ngModel/>
+                  <label class="form-label" for="form11Example5">Product Discount (save) Price</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="form11Example5" class="form-control" name="p_category" ngModel/>
+                  <label class="form-label" for="form11Example5">Category</label>
+                </div>
+
+                  <div class="form-outline mb-4">
+                  <input type="date" id="form11Example6" class="form-control"name="delivery_date" ngModel/>
+                  <label class="form-label" for="form11Example6">Delivery Date</label>
+                </div>
+               
+                 <div class="form-outline mb-4">
+                  <input type="file" id="form11Example4" class="form-control" (change)="onSelectFile($event)" name="image_front" accept="image/png,image/jpeg" ngModel/>
+                  <label class="form-label" for="form11Example4">Image Front</label>
+                </div>
+  
+                <div class="form-outline mb-4">
+                  <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_back" accept="image/png,image/jpeg" ngModel/>
+                  <label class="form-label" for="form11Example6">Image Back</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_side"accept="image/png,image/jpeg" ngModel/>
+                  <label class="form-label" for="form11Example6">Image side</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_top" accept="image/png,image/jpeg" ngModel />
+                  <label class="form-label" for="form11Example6">Image Top</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_triangle" accept="image/png,image/jpeg" ngModel/>
+                  <label class="form-label" for="form11Example6">Image Triangle</label>
+                </div> 
+                <div class="text-center">
+                  <button type="button" class="btn btn-success col-md-10">Upload</button>
+                </div>
+              </form>
+            </div>
+           <button>submit</button>
+
+

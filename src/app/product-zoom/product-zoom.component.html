@@ -1,0 +1,91 @@
+<div class="zoom_right_inner_panel">
+ <img (click) = "show()" class="child_img_display" style="width:250px;height:250px;"src="assets/img/{{cartItem.product_img}}" >
+<div style="text-align: center;">Click over image to Expand</div>
+</div>
+  <div class="zoom_left_inner_panel">
+    <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_master_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_master_img}}"></span>
+    <span class="child_img" (mouseover)="ChildFrontDisplay(cartItem.product_front_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_front_img}}"></span>
+    <span class="child_img" (mouseover)="ChildSideDisplay(cartItem.product_side_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_side_img}}"></span>
+    <span class="child_img" (mouseover)="ChildBackDisplay(cartItem.product_back_img)"><img style="width: 35px;height:40px;"src="assets/img/{{cartItem.product_back_img}}"></span>
+    <span class="child_img" (mouseover)="ChildTopDisplay(cartItem.product_top_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_top_img}}"></span>
+    <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.product_triangle_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_triangle_img}}"></span>
+  </div> 
+
+  <!-- <a (click) = "show()">
+    <img id="imageresource" src="https://therichpost.com/wp-content/uploads/2019/09/Angular-8-custom-accordion-working-example-364x225.png" style="width: 125px; height: 125px;">
+    Click to Enlarge
+  </a> -->
+  <!-- Creates the bootstrap modal where the image will appear -->
+  <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin: -1px;height: max-content;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">{{cartItem.product_name}}</h4>
+      </div>
+      <div class="pop-up-model">
+        <img class="child_img_display" style="width:400px;height:405px;"src="assets/img/{{cartItem.product_img}}" >
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click) = "hide()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+
+  <div class="col-sm-6 py-10">
+    <div class="zoom_right_panel">
+      <div class="card-body">
+        <h5 class="card-title_1"><strong>{{cartItem.product_name}}</strong></h5>
+        <p><span class="rates">₹ {{cartItem.product_price}} </span>
+           <span> </span> M.R.P : ₹ <del >
+            {{cartItem.product_mrp}}</del> 
+          <span> </span>
+          Save ₹ {{cartItem.product_mrp-cartItem.product_price}}</p>
+        <p class="card-text">Get it by <span class="delevery_date">
+          Tomorrow
+        </span></p>
+        <p>Free of Delivery by RuralX</p>
+      </div>
+      <strong>Product information</strong>
+      <ul>
+        <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera 
+          + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera
+        <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera 
+          + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera
+        <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera 
+          + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera
+        <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera 
+          + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera
+        <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera 
+          + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera
+      </ul>
+    </div>
+    <div class="zoom_addcart_panel">
+    <nav aria-label="quantity-navigation">
+    <h5><strong>Quantity:</strong></h5><ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="decrement()"><strong style="cursor: pointer;">-</strong></a></li>
+      <li class="page-item"><a class="page-link" >{{counter}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="increment()"><strong style="cursor: pointer;">+</strong></a></li>
+    </ul>
+  </nav>
+  <br>
+  <!-- <ul >
+<li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera </li>
+<li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera </li>
+<li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera </li>
+  </ul>
+  &nbsp; -->
+  &nbsp;
+  <strong><i id="locationMake2" class="fa fa-map-marker"  (click)="openDialog_()"></i> Select Delivery Location</strong>
+  &nbsp;
+  <br>
+  <br>
+<button class="btn btn-warning btn-md" (click)="addCart(counter)"><i class="fa fa-shopping-cart"> </i> ADD TO CART </button>
+<button class="btn btn-danger btn-md"style="margin-left:5px;" (click)="addDetails()"><i class="fa fa-credit-card" aria-hidden="true"></i> BUY NOW</button>
+<div> <strong style="color:red;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 13px;"> Secure Transaction </strong></div>
+  </div>
+  &nbsp;
+  &nbsp;
+  </div>

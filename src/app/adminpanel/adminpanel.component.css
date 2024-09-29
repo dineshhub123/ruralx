@@ -1,0 +1,61 @@
+.text-font{
+    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: .156rem;
+    font-size: 1.125rem;
+    }
+    .text-price{
+    padding: 0 .625rem;
+    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-style: normal;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: .813rem;
+    letter-spacing: 1.6px;
+    }
+    .text-descriptions{
+    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-style: normal;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    margin: .313rem 0 .938rem;
+    padding: 0 .625rem;
+    }
+    .button-color{
+    color: #4e4e4e ;
+    border-color: #4e4e4e ;
+    }
+    .btn-success{
+    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+    }
+ul{
+    background-color: #0d148e;
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+ li a{
+    display: block;
+    color: white;
+    width: 100%;
+    margin:auto;
+    padding: 8px;
+    border-right: 0.2px solid thistle;
+    text-align:center;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    
+
+  } 
+  li :default{
+    background-color: brown;
+  }

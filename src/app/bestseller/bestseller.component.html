@@ -1,0 +1,26 @@
+<div class="container">
+  <input class="form-control" id="myInput" type="text" placeholder="Filter...">
+  <br>
+  <ul class="list-group" id="myList">
+    <li class="list-group-item">500-700</li>
+    <li class="list-group-item">700-900</li>
+    <li class="list-group-item">1000-1500</li>
+    <li class="list-group-item">2000-2500</li>
+  </ul>  
+</div>
+<div *ngFor="let bestsellerData of bestsellerItem" class="card-content">
+  <div class="container">
+    <div class="d-flex flex-wrap bg-light">
+  <div  class="set-img" >
+  <div class="image-align"(click)="imgClick(bestsellerData)">
+  <!-- <img class="product-image" src="./assets/img/{{bestsellerData.product_img}}"> -->
+</div>
+  <!-- <h5>{{bestsellerData.product_name}}</h5>
+  <h6>MRP : {{bestsellerData.product_mrp}}</h6>
+  <h6>Price : {{bestsellerData.product_price}}</h6>
+  <div class="d-flex flex-wrap bg-light"> -->
+</div>
+</div>
+</div>
+</div>
+
