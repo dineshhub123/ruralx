@@ -1,6 +1,7 @@
 <!-- <button href="javascript:void(0)" class="closebtn border-none" (click)="onClose()" mat-button mat-dialog-close>&times;</button>  -->
-
-<button href="javascript:void(0)" class="closebtn border-none" mat-button mat-dialog-close>✕</button> 
+<div class="container-fluid">
+<div class="pt-2 py-2 w-100"  style="width:300px;overflow-x: hidden;">
+  <button href="javascript:void(0)" class="closebtn border-none" mat-button mat-dialog-close>✕</button> 
  <div>
   <h5> <strong> Check Your Available Item</strong></h5>
 </div>
@@ -21,6 +22,8 @@
 <span *ngIf="f.userPincode.errors" >Please Enter Pincode</span> 
 </div>
 </form>
+</div>
+</div>
 
 <!-- <mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>

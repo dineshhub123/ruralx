@@ -12,7 +12,7 @@ export class DisplaySearchItemComponent implements OnInit {
   constructor(public router:Router) { 
   this.searchItem = localStorage.getItem('displaySearchData')
     //this.searchItem=JSON.parse(localStorage.getItem('displaySearchData'))
-
+   console.log('searchItem',this.searchItem)
   }
 
   ngOnInit() {

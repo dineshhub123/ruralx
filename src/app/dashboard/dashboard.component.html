@@ -1,44 +1,31 @@
  <div class="headerBotom">
-  <mat-chip-list>
-   <mat-chip style="cursor: pointer; color: teal;" (click)="bestsellerFunc('bestseller')">
-      <mat-chip-avatar> 
-    <img  class="chips-img"src="./assets/img/watch2.png" alt="Photo of a Shiba Inu"/>
-    </mat-chip-avatar>
+  <mat-chip-set>
+       <mat-chip style="cursor: pointer; color: teal;" (click)="bestsellerFunc('bestseller')">
+    <img matChipAvatar class="chips-img"src="./assets/img/watch2.png" alt="Photo of a Shiba Inu"/>
       Best Seller</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;" (click)="mobileFunc('mobile')">
-      <mat-chip-avatar>
-      <img class="chips-img" src="./assets/img/color-mobile.jpg" alt="Photo of a Shiba Inu"/>
-    </mat-chip-avatar>     
+      <img matChipAvatar class="chips-img" src="./assets/img/color-mobile.jpg" alt="Photo of a Shiba Inu"/>
       Mobiles</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;"(click)="newReleaseFunc(' new release')">
-      <mat-chip-avatar>
-      <img class="chips-img" src="./assets/img/shoes.jpg" alt="Photo of a Shiba Inu"/>
-    </mat-chip-avatar>    
+      <img matChipAvatar class="chips-img" src="./assets/img/shoes.jpg" alt="Photo of a Shiba Inu"/>
       New Release</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;" (click)="electronicFunc('electronic')">
-      <mat-chip-avatar>
-      <img class="chips-img"  src="./assets/img/electronics_component.jpg" alt="Photo of a Shiba Inu"/>
-    </mat-chip-avatar>
+      <img matChipAvatar class="chips-img"  src="./assets/img/electronics_component.jpg" alt="Photo of a Shiba Inu"/>
       Electronics</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;"(click)="clothFunc('cloth')">
-      <mat-chip-avatar>
-      <img class="chips-img"  src="./assets/img/saree.png" alt="Photo of a Shiba Inu"/>
-    </mat-chip-avatar>
+      <img matChipAvatar class="chips-img"  src="./assets/img/saree.png" alt="Photo of a Shiba Inu"/>
       Clothes</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;"(click)="groceryFunc('grocery')">
-    <mat-chip-avatar>
-      <img class="chips-img"  src="./assets/img/grocery.png" alt="Photo of a Grocery"/>
-    </mat-chip-avatar>
+      <img matChipAvatar class="chips-img"  src="./assets/img/grocery.png" alt="Photo of a Grocery"/>
       Grocery</mat-chip>
     <mat-chip style="cursor: pointer;color: teal;"(click)="fashionFunc('fashion')">
-      <mat-chip-avatar>
-        <img class="chips-img" src="./assets/img/fashion.png" alt="Photo of a Shiba Inu"/>
-      </mat-chip-avatar>
+        <img matChipAvatar class="chips-img" src="./assets/img/fashion.png" alt="Photo of a Shiba Inu"/>
       Fashion</mat-chip>
     <mat-chip style="cursor: pointer; color: teal;"(click)="customerServiceFunc('customer')">
       Costomer Service</mat-chip>
-  </mat-chip-list>
-</div>
+    </mat-chip-set>
+    
+  </div>
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -61,18 +48,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <div>
-  <mat-chip style="cursor: pointer; color: teal;"(click)="customerServiceFunc('customerData')">
-    PAY ON DELIVERY</mat-chip>
-    <mat-chip style="cursor: pointer; color: teal;"(click)="customerServiceFunc('customerData')">
-   EASY RETURN</mat-chip>
-   <mat-chip style="cursor: pointer; color: teal;"(click)="customerServiceFunc('customerData')">
-   FREE DELIVERY ON FIRST ORDER</mat-chip>
-</div>
-<div >
-<p>Starting rs.49 | Deals on fitness & sports</p>
-<img src="C:\Users\krishna\OneDrive\Desktop\fitness.webp">
-</div>
   <div class="footerHead"><a href="#">Back to top</a></div>
   <div class="footer">
     <div class="col-sm-4">
@@ -117,12 +92,25 @@
       <div class="foot">
         <div class="contactFooter"><strong>Connect with_us</strong></div>
         <div class="socialLink">
-        <span><a href="https://www.facebook.com" ><i class="fa fa-facebook"></i></a></span>
-        <span><a href="https://twitter.com" ><i class="fa fa-twitter"></i></a></span>
-        <span><a href="https://google.com/" ><i class="fa fa-google"></i></a></span>
-        <span><a href="https://instagram.com"><i class="fa fa-instagram"></i></a></span>
+        <span><a href="https://www.facebook.com" >
+           <mat-icon>facebook</mat-icon>
+        </a></span>
+        <span><a href="https://twitter.com" >
+          <mat-icon>facebook</mat-icon>
+        </a></span>
+        <span><a href="https://google.com/" >
+          <mat-icon>facebook</mat-icon>
+        </a></span>
+        <span><a href="https://instagram.com">
+          <mat-icon>facebook</mat-icon>
+        </a></span>
       </div>
         <small> 
-           visit our webside for more details: http://www.Ruralx.in   
+           visit our webside for more details: https://www.Ruralx.in   
         </small>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>

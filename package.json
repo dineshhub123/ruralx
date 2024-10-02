@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@fortawesome/angular-fontawesome": "^0.13.0",
     "@material/chips": "^14.0.0",
     "ng-sidebar": "^9.4.3",
     "rxjs": "~7.8.0",

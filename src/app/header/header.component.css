@@ -1,3 +1,109 @@
+::ng-deep
+.mat-drawer-inner-container {
+  width:330px !important;
+}
+
+.mat-drawer-container{
+  position: relative !important;
+  display: inline !important;
+}
+.navbar-inverse{
+  width: 100%;
+  background-color:#040466;
+  border-radius: 0 !important;
+  /* padding-bottom: 35px;
+  margin-bottom: 15px; */
+}
+.navbar-inverse-sidenav{
+  background-color:rgb(8 64 115);
+  border-radius: 0 !important;
+  padding-bottom: 35px;
+  margin-bottom: 15px; 
+
+}
+.sidbarheader{
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 26px;
+  font-weight: 100;
+  text-align: center;
+  padding-top: 15px;
+}
+.userImage{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  float: left;
+  color: black;
+  text-align: center;
+  line-height: 41px;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: bold;
+  margin:-10px 0 0 0;
+
+}
+.userAccountName{
+  float: left;
+  margin-left: 15px;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
+  
+}
+.closebtn{
+  color:white;
+  font-size: 40px;
+ /* // text: underline offset 0; */
+  text-decoration-line: none;
+  float:right ;
+  position: relative;
+  margin-top: 0px;
+  margin-right: -45px;
+
+}
+.sidenav-content{
+  list-style: none;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  display: inline-block;
+
+}
+.sidenav-content li{
+  padding-bottom: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+
+}
+.sidenav-content li span{
+font-size: 18px;
+font-weight: bolder;
+color: black;
+
+}
+.logout-content a{
+color:brown;
+text-align: center;
+padding-bottom: 15px;
+margin-bottom: 50px;
+font-size: 16px;
+font-weight: 900;
+font-family: 'Roboto';
+}
+.version-content{
+  color:gray;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Roboto';
+
+
+}
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -593,9 +699,9 @@ body {
   .threeBars{
     color: white;
     font-size: 20px;
-    margin-left: 9px;
+    margin-left: 5px;
     float: left;
-    margin-top: 2px;
+    margin-top: 6px;
     cursor: pointer;
     }    
     .threeBarsCircle{
@@ -605,7 +711,7 @@ body {
       width: 35px;
       height: 35px;
       border-radius: 50%;
-      background-color: rgb(20, 20, 87);
+      background-color: rgb(8 64 115);
       text-align: center;
       line-height: 30px;
     }
@@ -638,8 +744,8 @@ body {
       margin-left: 0px;
 }
     .setwidth{
-     width: 75%;
-     margin-left: -13px;
+     width: 59%;
+     margin-top: 8px;
     }
     .navbar-input_btn{
     margin-left:0px;
@@ -678,15 +784,28 @@ body {
     
     }
     .badge{
-      background-color:red;
+      background-color:#f44336;
       color:white;
       position:absolute;
-      font-size:8px;
+      font-size:9px;
       top:0px;
+      right: 6px;
+
     }
     #locationMake{
-      font-size: 18px;
-      color:rgb(255, 238, 0)
+      font-size: 24px;
+      /* color:rgb(255, 238, 0) */
+      color: yellow;
+      position: absolute;
+      top:-1px;
+      right: 59px;
+    }
+    #signMake{
+      font-size: 24px;
+      position: absolute;
+      top:-1px;
+      right: 135px;
+
     }
     }
     /* for Tablate */
@@ -1817,13 +1936,13 @@ body {
           }
           .navbar-inverse{
             width: 100%;
-            background-color:navy;
+            background-color:rgb(6, 45, 81);
             border-radius: 0 !important;
 
          }
          .navbar-menu{
           width: 100%;
-          background-color:navy;
+          background-color:rgb(6, 45, 81);
           border-radius: 0 !important;
 
        }

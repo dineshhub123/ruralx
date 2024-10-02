@@ -20,15 +20,18 @@
 </div>
 </div>
 </div>
+
 <br>
+{{searchItem|json}}
+
 <div class="container">
 <div *ngFor="let searchData of searchItem" class="card-content">  
-      <div class="col-sm-2">
+  <div class="col-sm-2">
   <div  class="set-img" >
   <div class="image-align"(click)="imgClick(searchData)">
-  <img class="product-image" src="./assets/img/{{searchData.product_img}}">
+  <!-- <img class="product-image" src="./assets/img/{{searchData.product_img}}"> -->
 </div>
-  <h5>{{searchData.product_name}}</h5>
+  <h5>{{searchItem.product_name}}</h5>
   <h6>MRP : {{searchData.product_mrp}}</h6>
   <h6>Price : {{searchData.product_price}}</h6>
 </div>

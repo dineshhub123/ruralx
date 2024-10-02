@@ -44,6 +44,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatButtonModule } from '@angular/material/button'
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,6 +92,8 @@ import { MatButtonModule } from '@angular/material/button'
     ReactiveFormsModule,
     MatDialogModule,
     MatChipsModule,
+    MatIconModule,
+    MatSidenavModule,
     //SidebarJSModule.forRoot(),
     RouterModule.forRoot([
       {path:"",component:DashboardComponent},

@@ -12,6 +12,7 @@ import {Observable} from 'rxjs'
 import { ApiService } from '../api.service';
 import {FormControl} from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
+import { strings } from '@material/chips/deprecated/trailingaction/constants';
 
 
 export interface DialogData {
@@ -40,7 +41,7 @@ export class HeaderComponent implements OnInit {
   searchName:string="";
   
   public formdata:any
-  
+  public isMenuOpen:boolean = false
 constructor(public dialog: MatDialog,private http: HttpClient ,public router:Router,private fb:FormBuilder,private apiService:ApiService) { 
   // this.http.get("http://localhost/employee.php").subscribe(data => {
   //   this.data.push(data);
@@ -69,17 +70,25 @@ constructor(public dialog: MatDialog,private http: HttpClient ,public router:Rou
       const filterValue = value.toLowerCase();
       return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
+  onSidenavClick(isMenuOpen:any){
+    //this.isMenuOpen = false;
+    console.log('isMenuOpen.....',isMenuOpen)
+  }
+  openCloseSidepanel(ev:any){
+    console.log('isMenuOpen',ev)
 
+
+  }
   searchDataFn(searchData:any){
-    //let userData = {};
-    //userData['searchData'] = searchData;
-    this.apiService.searchData(searchData).subscribe(res =>{
+
+    let userData ={searchData};
+    this.apiService.searchData(userData).subscribe(res =>{
     let displaySearchData = res;
     localStorage.setItem('displaySearchData',JSON.stringify(displaySearchData))
     this.router.navigate(['./display-item'])
-    setTimeout(()=>{
-      this.reloadCurrentRoute();
-    },5)
+    // setTimeout(()=>{
+    //   this.reloadCurrentRoute();
+    // },5)
     this.input.nativeElement.value='';
 
   })
