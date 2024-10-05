@@ -20,14 +20,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { SidenavComponent } from './header/sidenav.component';
 //import { SidebarJSModule } from 'ng-sidebarjs';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BestsellerComponent } from './bestseller/bestseller.component';
 import { TodaydealComponent } from './todaydeal/todaydeal.component';
-import { MobileComponent } from './mobile/mobile.component';
-import { ElectronicComponent } from './electronic/electronic.component';
-import { GroceryComponent } from './grocery/grocery.component';
-import { ClothComponent } from './cloth/cloth.component';
-import { FashionComponent } from './fashion/fashion.component';
-import { NewreleaseComponent } from './newrelease/newrelease.component';
 import { CustomerserviceComponent } from './customerservice/customerservice.component';
 import { DeliverystatusComponent } from './deliverystatus/deliverystatus.component';
 import { LoginComponent } from './login/login.component';
@@ -60,14 +53,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     HeaderComponent,
     SidenavComponent,
     DashboardComponent,
-    BestsellerComponent,
     TodaydealComponent,
-    MobileComponent,
-    ElectronicComponent,
-    GroceryComponent,
-    ClothComponent,
-    FashionComponent,
-    NewreleaseComponent,
     CustomerserviceComponent,
     DeliverystatusComponent,
     LoginComponent,
@@ -102,14 +88,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
       {path:"pzoom",component:ProductZoomComponent},
       {path:"addcart",component:AddcartComponent},
       {path:"useraddress",component:UseraddressComponent},
-      {path: "bestseller",component:BestsellerComponent},
       {path: "todaydeal",component:TodaydealComponent},
-      {path: "mobile",component:MobileComponent},
-      {path: "electronic",component:ElectronicComponent},
-      {path: "grocery",component:GroceryComponent},
-      {path: "cloth",component:ClothComponent},
-      {path: "fashion",component:FashionComponent},
-      {path: "newrelease",component:NewreleaseComponent},
       {path: "customer",component:CustomerserviceComponent},
       {path: "deliverystatus",component:DeliverystatusComponent},
       {path: "login",component:LoginComponent},

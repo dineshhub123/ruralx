@@ -17,7 +17,9 @@ export class AddcartComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    this.addCartData=localStorage.getItem('cart-item')
+    let cartItem:any;
+    cartItem=localStorage.getItem('cart-item')
+    this.addCartData = JSON.parse(cartItem)
     this.quantity=localStorage.getItem('quantity')
     this.addPrice=this.addCartData.product_price*this.quantity;
     if (this.quantity==null){

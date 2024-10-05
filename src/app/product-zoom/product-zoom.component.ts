@@ -1,11 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,Inject,} from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import {ActivatedRoute } from '@angular/router';
 //import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DailogComponent } from '../dailog/dailog.component';
 import { MatDialog } from '@angular/material/dialog'; 
-
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-product-zoom',
@@ -17,14 +17,14 @@ export class ProductZoomComponent implements OnInit{
   show()
   {
     this.showModal = true; // Show-Hide Modal Check
-    //this.document.body.classList.add('no-scroll');
+    this.document.body.classList.add('no-scroll');
 
   }
   //Bootstrap Modal Close event
   hide()
   {
     this.showModal = false;
-    //this.document.body.classList.remove('no-scroll');
+    this.document.body.classList.remove('no-scroll');
 
   }
 
@@ -61,12 +61,15 @@ decrement(){
     private router:Router,
     private route:ActivatedRoute,
     public dialog: MatDialog,
-    ){
-      this.cartItem = localStorage.getItem('cart-item')
-    this.http.get("http://localhost/employee.php").subscribe(data => {
-    this.data.push(data);
-    }, 
-    error => console.error(error));
+    @Inject(DOCUMENT) private document: Document,
+      ){
+      let itemZoom:any;
+      itemZoom = localStorage.getItem('cart-item')
+      this.cartItem = JSON.parse(itemZoom)
+    // this.http.get("http://localhost/employee.php").subscribe(data => {
+    // this.data.push(data);
+    // }, 
+    // error => console.error(error));
 
   }
   openDialog_(): void {

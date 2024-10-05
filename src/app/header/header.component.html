@@ -1,33 +1,36 @@
-
 <div class="headerPositionFixed">
-  <nav class=" navbar-inverse">
+  <nav class="navbar-inverse">
     <form #searchData="ngForm" (ngSubmit)="searchDataFn(myControl.value)">
-
       <div class="navbar-input_btn ">
-        <div class="img_position">
+         <div class="img_position">
           <img class="imgSet" src="assets/img/logo.png">
-        </div>
-        <!-- <div class="setwidth autocomplete"> 
-       <input autocomplete="off" type="text" class="form-control input-md inpW " id="myInput" placeholder="Search for product, brand & more" name="searchName" ngModel (keyup)="searchItem(items)" #items> 
-    </div> -->
-        <div class="setwidth">
-          <!-- <form class="example-form"> -->
-          <input type="text" placeholder="Search for product, brand & more" aria-label="Number" matInput
-            [formControl]="myControl" [matAutocomplete]="auto" #searchValue>
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
-          <!-- </form> -->
-        </div>
-        <div class="setBtn">
-          <button type="submit" mat-flat-button><i class="fa fa-search"></i>
-            Search</button>
-        </div>
+        </div> 
+        <div class="cart-account-align">
+       <ul class="nav navbar-nav listFloating">
+      <li>
+        <a (click)="loginPage()" style="cursor: pointer;" placement="bottom">
+          <mat-icon id="signMake" aria-hidden="false" aria-label="logout icon" fontIcon="login" [ariaSetSize]="50"
+            color="warn"></mat-icon>
+          Hello, Sign in<br><strong>Account
+            & Lists</strong>
+        </a>
+      </li>
+      <li>
+        <a (click)="openDialogD()" style="cursor: pointer;">
+          <mat-icon id="locationMake">location_on</mat-icon>
+          Check Item
+          <br>
+          <strong> Availability </strong>
+        </a>
+      </li>
+      <li><a style="cursor: pointer;"><span>
+            <mat-icon (click)="cartFun()">shopping_cart</mat-icon>
+          </span><span class="badge">{{quantity}}</span>
+          <br><strong>Cart </strong> </a></li>
+    </ul> 
+  </div>
       </div>
     </form>
-
   </nav>
   <nav class="navbar navbar-menu">
     <div class="threeBarsCircle">
@@ -35,62 +38,33 @@
         <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
       </div>
     </div>   
-    <!-- <app-sidenav></app-sidenav> -->
-    <ul class="nav navbar-nav listFloating">
-      <li>
-        <a (click)="loginPage()" style="cursor: pointer;" placement="bottom">
-          <mat-icon id="signMake" aria-hidden="false" aria-label="logout icon" fontIcon="login" [ariaSetSize]="50"
-            color="warn"></mat-icon>
-          Hello, Sign in<br><strong>Account
-            & Lists</strong>
-          <!-- <mat-icon>arrow_drop_down</mat-icon> -->
-
-        </a>
-
-      </li>
-
-      <li>
-        <a (click)="openDialogD()" style="cursor: pointer;">
-          <mat-icon id="locationMake">location_on</mat-icon>
-          Check Item
-          <br>
-          <strong> Availability </strong>
-          <!-- <mat-icon>arrow_drop_down</mat-icon> -->
-        </a>
-      </li>
-
-      <!-- <li>
-            <a style="cursor: pointer;" popover="English Hindi Chinese Japanies Marathi"  placement="bottom">
-             Select <br><strong> Language </strong><i class="fa fa-caret-down" ></i>
-            </a>
-          </li> -->
-      <!-- <li>
-        <a (click)="loginPage()"
-          style="cursor: pointer;" placement="bottom"> Hello, Sign in<br><strong>Account
-            & Lists</strong> 
-        <mat-icon>arrow_drop_down</mat-icon>
-              
-          </a>
-
-        </li> -->
-
-      <li><a style="cursor: pointer;"><span>
-            <!-- <i class="fa fa-shopping-cart" (click)="cartFun()"
-              area-hidden="true"></i> -->
-            <mat-icon (click)="cartFun()">shopping_cart</mat-icon>
-          </span><span class="badge">{{quantity}}</span>
-          <br><strong>Cart </strong> </a></li>
-    </ul>
+    <div class="input-text-and-btn">
+      <form #searchData="ngForm" (ngSubmit)="searchDataFn(myControl.value)">
+        <div class="navbar-input_btn ">
+          <div class="setwidth">
+            <input type="text" placeholder="Search for product, brand & more" aria-label="Number" matInput
+              [formControl]="myControl" [matAutocomplete]="auto" #searchValue>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </div>
+          <div class="setBtn">
+            <button type="submit" mat-flat-button>
+              <mat-icon>search</mat-icon>
+              Search</button>
+          </div>
+        </div>
+      </form>  
+    </div>
   </nav>
 </div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav"(click)="onSidenavClick(isMenuOpen)">
-
-<!-- <sidebar-js (open)="onOpen()" (close)="onClose()" (changeVisibility)="onChangeVisibility($event)" [sidebarjsConfig]="{backdropOpacity: 0.2,documentSwipeRange: 15}"> -->
   <nav class="navbar-inverse-sidenav">
   <div class="col-sm-12"> 
     <div class="sidbarheader">
-      <!-- <a href="javascript:void(0)" class="closebtn border-none" (click)="onClose()" >&times;</a> -->
 		<div class="userImage">D</div>
 		<div class="userAccountName">HELLO ,  DINESH </div>
 	</div>
@@ -117,11 +91,7 @@
   <li><label class="logout-content"  [routerLink]="['dashboard']"><a (click)="sidenav.toggle()"> LOGOUT <mat-icon style="margin-bottom: -5px;">logout</mat-icon> </a></label></li>
   <div class="version-content" > https://www.ruralx.in 2022 <br>version 1.0.0</div>
 </ul>
-
 </div>
-<!-- <i class="fa-solid fa-user"></i> -->
-<!-- </sidebar-js> -->
-
   </mat-sidenav>
   <mat-sidenav-content>
     <main>

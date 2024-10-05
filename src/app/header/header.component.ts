@@ -80,15 +80,16 @@ constructor(public dialog: MatDialog,private http: HttpClient ,public router:Rou
 
   }
   searchDataFn(searchData:any){
-
-    let userData ={searchData};
-    this.apiService.searchData(userData).subscribe(res =>{
+    let userData = {
+      searchData: searchData
+    };
+    this.apiService.searchData(userData).subscribe((res:any) =>{
     let displaySearchData = res;
     localStorage.setItem('displaySearchData',JSON.stringify(displaySearchData))
     this.router.navigate(['./display-item'])
-    // setTimeout(()=>{
-    //   this.reloadCurrentRoute();
-    // },5)
+    setTimeout(()=>{
+      this.reloadCurrentRoute();
+    },5)
     this.input.nativeElement.value='';
 
   })

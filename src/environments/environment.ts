@@ -10,7 +10,7 @@ export const environment = {
     //apiUrl: 'http://localhost/employee.php',
     
     employeeApiURL: 'http://localhost/employee_product.php',
-    searchApiUrl: 'http://localhost/search_product.php',
+   // searchApiUrl: 'http://localhost/search_product.php',
     mobileApiUrl: 'http://localhost/mobile_product.php',
     electronicApiUrl:'http://localhost/electronic_product.php',
     fashionApiUrl: 'http://localhost/fashion_product.php',
@@ -21,7 +21,7 @@ export const environment = {
     coustomerApiUrl: 'http://localhost/coustomer_product.php',
     newreleaseApiUrl: 'http://localhost/newrelease_product.php',
 
-   // apiUrl: 'http://192.168.76.245/search_product.php',
+    searchApiUrl: 'http://192.168.249.250/search_product.php',
    // apiUrl: 'http://192.168.89.68/search_product.php',
 
 };

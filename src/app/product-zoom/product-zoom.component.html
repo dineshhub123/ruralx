@@ -8,7 +8,7 @@
     <span class="child_img" (mouseover)="ChildSideDisplay(cartItem.product_side_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_side_img}}"></span>
     <span class="child_img" (mouseover)="ChildBackDisplay(cartItem.product_back_img)"><img style="width: 35px;height:40px;"src="assets/img/{{cartItem.product_back_img}}"></span>
     <span class="child_img" (mouseover)="ChildTopDisplay(cartItem.product_top_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_top_img}}"></span>
-    <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.product_triangle_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_triangle_img}}"></span>
+    <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_img}}"></span>
   </div> 
 
   <!-- <a (click) = "show()">
@@ -17,19 +17,23 @@
   </a> -->
   <!-- Creates the bootstrap modal where the image will appear -->
   <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin: -1px;height: max-content;">
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal-dialog">
+    <div class="modal-content" style="position: relative;top:106px;">
+      <div class="modal-header" style="height: 60px;">
         <h4 class="modal-title" id="myModalLabel">{{cartItem.product_name}}</h4>
       </div>
       <div class="pop-up-model">
-        <img class="child_img_display" style="width:400px;height:405px;"src="assets/img/{{cartItem.product_img}}" >
+        <img class="child_img_display" style="width:330px;height:340px;"src="assets/img/{{cartItem.product_img}}" >
         
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" (click) = "hide()">Close</button>
+      <div class="modal-footer" style="height: 60px;color:teal;font-weight: 700;">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "hide()">Close</button>
       </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
   </div>
   
@@ -88,4 +92,6 @@
   </div>
   &nbsp;
   &nbsp;
-  </div>
+  <br>
+  <br>
+</div>

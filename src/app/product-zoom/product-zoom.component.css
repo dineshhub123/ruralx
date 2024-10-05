@@ -354,8 +354,8 @@ height: 100px;
     font-size: 16px;
     color:rgb(199, 36, 36);
     text-align: center;
-
-
+    font-weight: 900;
+    text-transform: uppercase;   
   }
   h5{
     color: white;
@@ -2231,10 +2231,16 @@ margin-right:0px;
     }
     h4{
       font-size: 16px;
-      color:rgb(199, 36, 36);
+      color:teal;
       text-align: center;
+      font-weight: 900;
+      text-transform: uppercase;   
+
   
-  
+    }
+    .pop-up-model{
+      display: flex;
+      justify-content: center;
     }
     h5{
       color: white;

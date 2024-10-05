@@ -1,3 +1,4 @@
+<div class="">
 <div class="filter_block">
   <div class="filter-align">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -20,21 +21,23 @@
 </div>
 </div>
 </div>
-
 <br>
-{{searchItem|json}}
-
 <div class="container">
-<div *ngFor="let searchData of searchItem" class="card-content">  
-  <div class="col-sm-2">
+<div *ngFor="let searchData of searchItem" class="card-content col-6"> 
+  <div class="">
   <div  class="set-img" >
   <div class="image-align"(click)="imgClick(searchData)">
-  <!-- <img class="product-image" src="./assets/img/{{searchData.product_img}}"> -->
+  <img class="product-image" src="./assets/img/{{searchData.product_img}}">
 </div>
-  <h5>{{searchItem.product_name}}</h5>
-  <h6>MRP : {{searchData.product_mrp}}</h6>
-  <h6>Price : {{searchData.product_price}}</h6>
+  <div class="product-name">{{searchData?.product_name}}</div>
+  <div class="product-mrp">MRP : {{searchData.product_mrp}}</div>
+  <div class="product-price">Price : {{searchData.product_price}}</div>
 </div>
 </div>
 </div>
+</div>
+<br>
+<br>
+<br>
+<br>
 </div>
