@@ -41,7 +41,7 @@ export class AdminpanelComponent implements OnInit {
 uploadFormData(){
 const uploadData= new FormData();
       uploadData.append("file", this.selectedFile,this.selectedFile.name)
-     this.http.post("http://localhost/userdatabase.php",uploadData,{
+     this.http.post("http://localhost/uploadAdminData.php",uploadData,{
      reportProgress:true,
      observe:'events'  
      }).subscribe((res:object) => {
@@ -58,6 +58,10 @@ const uploadData= new FormData();
   upload(){
     this.router.navigate(["upload"]);
   }
+  adminLogout(){
+    localStorage.removeItem('adminMobile');
+    this.router.navigate(["dashboard"]);
 
+  }
 
 }

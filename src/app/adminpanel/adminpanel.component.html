@@ -1,5 +1,6 @@
             <div class="card-header py-1 ">
-              <h3 class="mb-0 text-font text-uppercase text-center" style="color: brown;" >Admin Panel</h3>
+              <h3 class="mb-0 text-font text-uppercase text-left" style="color: brown;" >Admin Panel</h3>
+             <div class="text-right adminLogout-content" (click)="adminLogout()"> Logout <mat-icon style="margin-bottom: -7px;">logout</mat-icon></div>
             </div>
             <header> 
               <ul>
@@ -7,8 +8,6 @@
                 <li><a routerLink="./sell-notification">Notification</a></li>
                 <li><a>Other</a></li>
               </ul>
-              
             </header>
-
             <router-outlet></router-outlet>
 

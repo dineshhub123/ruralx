@@ -3,11 +3,11 @@
 <div style="text-align: center;">Click over image to Expand</div>
 </div>
   <div class="zoom_left_inner_panel">
-    <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_master_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_master_img}}"></span>
-    <span class="child_img" (mouseover)="ChildFrontDisplay(cartItem.product_front_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_front_img}}"></span>
-    <span class="child_img" (mouseover)="ChildSideDisplay(cartItem.product_side_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_side_img}}"></span>
-    <span class="child_img" (mouseover)="ChildBackDisplay(cartItem.product_back_img)"><img style="width: 35px;height:40px;"src="assets/img/{{cartItem.product_back_img}}"></span>
-    <span class="child_img" (mouseover)="ChildTopDisplay(cartItem.product_top_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_top_img}}"></span>
+    <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_img}}"></span>
+    <span class="child_img" (mouseover)="ChildFrontDisplay(cartItem.img_front)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.img_front}}"></span>
+    <span class="child_img" (mouseover)="ChildSideDisplay(cartItem.img_side)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.img_side}}"></span>
+    <span class="child_img" (mouseover)="ChildBackDisplay(cartItem.img_back)"><img style="width: 35px;height:40px;"src="assets/img/{{cartItem.img_back}}"></span>
+    <span class="child_img" (mouseover)="ChildTopDisplay(cartItem.img_top)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.img_top}}"></span>
     <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"src="assets/img/{{cartItem.product_img}}"></span>
   </div> 
 
@@ -44,9 +44,9 @@
         <h5 class="card-title_1"><strong>{{cartItem.product_name}}</strong></h5>
         <p><span class="rates">₹ {{cartItem.product_price}} </span>
            <span> </span> M.R.P : ₹ <del >
-            {{cartItem.product_mrp}}</del> 
+            {{cartItem.product_mrp_price}}</del> 
           <span> </span>
-          Save ₹ {{cartItem.product_mrp-cartItem.product_price}}</p>
+          Save ₹ {{cartItem.product_mrp_price-cartItem.product_price}}</p>
         <p class="card-text">Get it by <span class="delevery_date">
           Tomorrow
         </span></p>

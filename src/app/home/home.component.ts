@@ -75,10 +75,10 @@ generate(){
 
 }
 fetchData(){
-   let res=this.apiService.employeeData().subscribe(
-    res => {
-     alert(JSON.stringify(res[0].product_name))
-    })
+  //  let res=this.apiService.employeeData().subscribe(
+  //   res => {
+  //    alert(JSON.stringify(res[0].product_name))
+  //   })
  }
 
 }

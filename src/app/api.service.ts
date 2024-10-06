@@ -13,17 +13,10 @@ export class ApiService {
   headers:any;
   auth:any;
   
-  apiEmployeeURL:string = environment.employeeApiURL;
+  getUserInfoURL:string = environment.getUserDetailsApiURL;
   apiSearchURL:string = environment.searchApiUrl;
-  apiMobileURL:string = environment.mobileApiUrl;
-  apiElectronicURL:string = environment.electronicApiUrl;
-  apiFashionURL:string = environment.fashionApiUrl;
-  apiGroceryURL:string = environment.groceryApiUrl;
-  apiBestsellerURL:string = environment.bestsellerApiURL;
-  apiClothURL:string = environment.clothApiUrl;
-  apiTodaydealURL:string = environment.todaydealApiUrl;
-  apiNewreleaseURL:string = environment.newreleaseApiUrl;
-  apiCoustomerURL:string = environment.coustomerApiUrl;
+  apiUploadDataURL:string = environment.uploadDataApiUrl;
+  apiInsertUserInfoURL:string = environment.insertUserDetailsApiUrl;
 
 
   constructor(private http: HttpClient,private router:Router) { }
@@ -48,38 +41,17 @@ export class ApiService {
   //   return this.http.post(this.apiURL + "user-info", object).pipe(map((res: any) => res));
   // }
 
-  employeeData(): Observable<any> {
-    return this.http.get(this.apiEmployeeURL,).pipe(map((res: any) => res)); 
+  getUserDetailsData(): Observable<any> {
+    return this.http.get(this.getUserInfoURL).pipe(map((res: any) => res)); 
   }
   searchData(object:any): Observable<any> {
     return this.http.post(this.apiSearchURL,object).pipe(map((res: any) => res));
   }
-  mobileData(object:any): Observable<any> {
-    return this.http.post(this.apiMobileURL,object).pipe(map((res: any) => res));
+  uploadData(object:any): Observable<any> {
+    return this.http.post(this.apiUploadDataURL,object).pipe(map((res: any) => res));
   }
-  electronicData(object:any): Observable<any> {
-    return this.http.post(this.apiElectronicURL,object).pipe(map((res: any) => res));
+  insertUserDetails(object:any): Observable<any> {
+    return this.http.post(this.apiInsertUserInfoURL,object).pipe(map((res: any) => res));
   }
 
-  fashionData(object:any): Observable<any> {
-    return this.http.post(this.apiFashionURL,object).pipe(map((res: any) => res));
-  }
-  groceryData(object:any): Observable<any> {
-    return this.http.post(this.apiGroceryURL,object).pipe(map((res: any) => res));
-  }
-  bestsellerData(object:any): Observable<any> {
-    return this.http.post(this.apiBestsellerURL,object).pipe(map((res: any) => res));
-  }
-  clothData(object:any): Observable<any> {
-    return this.http.post(this.apiClothURL,object).pipe(map((res: any) => res));
-  }
-  todaydealData(object:any): Observable<any> {
-    return this.http.post(this.apiTodaydealURL,object).pipe(map((res: any) => res));
-  }
-  newreleaseData(object:any): Observable<any> {
-    return this.http.post(this.apiNewreleaseURL,object).pipe(map((res: any) => res));
-  }
-  customerData(object:any): Observable<any> {
-    return this.http.post(this.apiCoustomerURL,object).pipe(map((res: any) => res));
-  }
 }

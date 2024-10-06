@@ -4,6 +4,16 @@
     letter-spacing: .156rem;
     font-size: 1.125rem;
     }
+    .card-header{
+      display: flex;
+    }
+    .adminLogout-content{
+      position: absolute;
+      right:10px;
+      color:brown;
+      font-size: 16px;
+      font-weight: 900;
+    }
     .text-price{
     padding: 0 .625rem;
     font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
