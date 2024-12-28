@@ -1,4 +1,4 @@
-<div class="headerPositionFixed">
+<div class="headerPositionFixed" >
   <nav class="navbar-inverse">
     <form #searchData="ngForm" (ngSubmit)="searchDataFn(myControl.value)">
       <div class="navbar-input_btn ">
@@ -34,7 +34,7 @@
   </nav>
   <nav class="navbar navbar-menu">
     <div class="threeBarsCircle">
-      <div class="threeBars" (click)="sidenav.toggle()">
+      <div class="threeBars" (click)="sidenav.toggle()" (click)="onSidenavClick(isMenuOpen)">
         <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
       </div>
     </div>   
@@ -43,7 +43,7 @@
         <div class="navbar-input_btn ">
           <div class="setwidth">
             <input type="text" placeholder="Search for product, brand & more" aria-label="Number" matInput
-              [formControl]="myControl" [matAutocomplete]="auto" #searchValue>
+              [formControl]="myControl" [matAutocomplete]="auto" #searchValue (keyup)="searchDataFn(myControl.value)">
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
               <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                 {{option}}
@@ -61,7 +61,7 @@
   </nav>
 </div>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav"(click)="onSidenavClick(isMenuOpen)">
+  <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav" >
   <nav class="navbar-inverse-sidenav">
   <div class="col-sm-12"> 
     <div class="sidbarheader">

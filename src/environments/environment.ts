@@ -9,15 +9,16 @@ export const environment = {
   //apiUrl: 'https://tsoliteuat.tradesmartonline.in/api/v5_uat/public/',
   //apiUrl: 'http://localhost/employee.php',
 
-  //getUserDetailsApiURL: 'http://localhost/getUserLoginDetails.php',
-  // searchApiUrl: 'http://localhost/search_product.php',
-  //uploadDataApiUrl: 'http://localhost/userdatabase.php',
-  //insertUserDetailsApiUrl: 'http://localhost/insertUserDetailsData.php',
+  getUserDetailsApiURL: 'http://localhost/getUserLoginDetails.php',
+  searchApiUrl: 'http://localhost/search_product.php',
+  uploadDataApiUrl: 'http://localhost/userdatabase.php',
+  insertUserDetailsApiUrl: 'http://localhost/insertUserDetailsData.php',
+  getProductListDetailsApiUrl: 'http://localhost/getProductDetails.php',
 
-  getUserDetailsApiURL: 'http://192.168.249.250/getUserLoginDetails.php',
-  searchApiUrl: 'http://192.168.249.250/search_product.php',
-  uploadDataApiUrl: 'http://192.168.249.250/userdatabase.php',
-  insertUserDetailsApiUrl: 'http://192.168.249.250/insertUserDetailsData.php',
+  // getUserDetailsApiURL: 'http://192.168.185.250/getUserLoginDetails.php',
+  // searchApiUrl: 'http://192.168.185.250/search_product.php',
+  // uploadDataApiUrl: 'http://192.168.15.250/userdatabase.php',
+  // insertUserDetailsApiUrl: 'http://192.168.15.250/insertUserDetailsData.php',
 
 };
 

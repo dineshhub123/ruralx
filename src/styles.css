@@ -10,7 +10,11 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     background-color: gray;
 
 }
-    
+::ng-deep{ .mat-drawer-container{
+height: 760px;
+overflow:scroll;
+}
+} 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }

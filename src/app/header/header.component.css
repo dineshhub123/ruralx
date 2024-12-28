@@ -1,15 +1,22 @@
 ::ng-deep
 .mat-drawer-inner-container {
   width:330px !important;
+  /* height: 1200px !important; 
+  overflow-y: scroll !important;*/
 }
 .cart-account-align{
   position: absolute;
   right: 15px;
   top:15px;
 }
+.mat-drawer-content{
+ overflow-x: hidden;
+}
 .mat-drawer-container{
   position: relative !important;
-  display: inline !important;
+  /* display: inline !important; */
+  height: 670px;
+  overflow-y: scroll;
 }
 .navbar-inverse{
   width: 100%;

@@ -12,7 +12,7 @@ import {User, IUserResponse} from './header/user.class';
 export class ApiService {
   headers:any;
   auth:any;
-  
+  apiProductListURL:string = environment.getProductListDetailsApiUrl;
   getUserInfoURL:string = environment.getUserDetailsApiURL;
   apiSearchURL:string = environment.searchApiUrl;
   apiUploadDataURL:string = environment.uploadDataApiUrl;
@@ -40,7 +40,9 @@ export class ApiService {
   //   //this.commonHeaderFunction(); 
   //   return this.http.post(this.apiURL + "user-info", object).pipe(map((res: any) => res));
   // }
-
+  getProductListDetailsData(): Observable<any> {
+    return this.http.get(this.apiProductListURL).pipe(map((res: any) => res)); 
+  }
   getUserDetailsData(): Observable<any> {
     return this.http.get(this.getUserInfoURL).pipe(map((res: any) => res)); 
   }
