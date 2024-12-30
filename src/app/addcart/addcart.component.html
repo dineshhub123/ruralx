@@ -1,25 +1,28 @@
+  <div>
   <div class="col-sm-12" > 
-  <div *ngIf="emptyCart" class="addCart-content"> Your Cart is Empty Now</div>
+    <div *ngIf="addCartData.length==0" class="addCart-content"> 
+      <img src="assets/img/empty_cart3.jpg">
+      <div> Your Shoping Cart is Empty Now, Continue Shoping... </div>
+    </div>
   </div>
-  <div *ngIf="addcartFlag">
-  <div class="col-sm-12">
-    <div class="zoom_left_inner_panel">
-      <img style="width:150px;height:150px;"src="assets/img/{{addCartData.product_img}}">
-   </div>
-  </div>  
-<div class="col-sm-12 py-10">
+<div class="col-sm-12 py-10" *ngFor="let cartData of addCartData">
 <div class="zoom_right_panel">  
   <div class="card-body">
-    <div> 
-      <h5 class="card-title_1"><strong>{{addCartData.product_name}}</strong></h5>
+    <div class="col-sm-12">
+      <div class="zoom_left_inner_panel">
+        <img style="width:150px;height:150px;"src="assets/img/{{cartData.product_img}}">
+     </div>
+    </div>  
+    <div>       
+      <h5 class="card-title_1"><strong>{{cartData.product_name}}</strong></h5>
         <p> 
           M.R.P : ₹ <del >
-          {{addCartData.product_mrp_price}}</del> 
-          Save ₹ {{addCartData.product_mrp_price-addCartData.product_price}}
+          {{cartData.product_mrp_price}}</del> 
+          Save ₹ {{cartData.product_mrp_price-cartData.product_price}}
           </p>
       <p class="card-text">Get it by 
         <span class="delevery_date">
-        {{addCartData.product_delivery_date}}
+        {{cartData.product_delivery_date}}
       </span>
       <span >
       </span>
@@ -28,23 +31,29 @@
     </div>
     <div class="zoom_right_panel">  
     <div class="rates" >
-         Price : ₹{{addCartData.product_price}} 
+         Price : ₹{{cartData.product_price}} 
+         <div style="position: absolute;bottom: 260px;right: 50px;" >
+         <span style="font-size: 10px;position:relative;top:7px;right:-34px"> delete cart</span>
+         <mat-icon (click)="deleteCart(cartData)">delete</mat-icon>
+     </div>
          <hr>
-        <h5 class="card-title_1" ><strong> Subtotal : ₹ {{this.addPrice}} ({{quantity}} item) </strong></h5>
+        <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price?(cartData.product_price*quantity).toFixed(2):(cartData.product_price).toFixed(2)}} ({{quantity}} item) </strong></h5>
         <hr style="border-bottom: 0.1px solid gray;">
       </div>
     </div>
   </div>
 </div>
-</div>
-
-<div class="col-sm-6" >
+ <div class="col-sm-6" >
   <div class="zoom_right_panel" >  
-  <div>
-  <button class="btn btn-warning" style="margin-bottom: 80px;" (click)="deleteCart()"> Delete Cart</button>
-   &nbsp;&nbsp;
-  <button class="btn btn-danger btn-md" style="margin-bottom: 80px;" (click)="addDetails()">Proceed to Buy</button>
+  </div>
+  </div> 
 </div>
+<div class="col-md-12" *ngIf="addCartData.length>0">
+  <div class="totalItemValue" >  
+  <div class="totalAmount mb-3">Total : ₹ {{totalAmount.toFixed(2)}}/- </div> 
+  <button class="btn btn-info btn-rounded btn-md float-right" (click)="addDetails()">Proceed to Buy</button>
 </div>
-</div>
+</div> 
+
+
 

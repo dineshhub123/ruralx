@@ -14,7 +14,7 @@ import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 import { strings } from '@material/chips/deprecated/trailingaction/constants';
 import { DOCUMENT } from '@angular/common';
-
+import { AddcartService } from '../addcart.service';
 
 export interface DialogData {
   animal: string;
@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
 
   public formdata: any
   public isMenuOpen: boolean = false
-  constructor(@Inject(DOCUMENT) private document: Document,
+  constructor(@Inject(DOCUMENT) private document: Document,public addCartService:AddcartService,
     public dialog: MatDialog, private http: HttpClient, public router: Router, private fb: FormBuilder, private apiService: ApiService) {
     this.apiService.getProductListDetailsData().subscribe((data: any) => {
       let searchList = data.map((item: any) => item.category);
@@ -55,11 +55,14 @@ export class HeaderComponent implements OnInit {
       error => console.error(error));
   }
   get f() { return this.formdata.controls; }
+  addCartData:any =[]
   ngOnInit() {
-
     // this.formdata = this.fb.group({
     //   userPincode: ['', [Validators.required, Validators.maxLength(6)]],
     // });
+    let cartItem:any;
+    cartItem=localStorage.getItem('addCartData')
+    this.addCartData = JSON.parse(cartItem)
 
     this.quantity = localStorage.getItem('quantity')
     if (this.quantity == null) {

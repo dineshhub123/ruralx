@@ -6,7 +6,7 @@ import {ActivatedRoute } from '@angular/router';
 import { DailogComponent } from '../dailog/dailog.component';
 import { MatDialog } from '@angular/material/dialog'; 
 import { DOCUMENT } from '@angular/common';
-
+import { AddcartService } from '../addcart.service';
 @Component({
   selector: 'app-product-zoom',
   templateUrl: './product-zoom.component.html',
@@ -61,6 +61,7 @@ decrement(){
     private router:Router,
     private route:ActivatedRoute,
     public dialog: MatDialog,
+    public addCartService:AddcartService,
     @Inject(DOCUMENT) private document: Document,
       ){
       let itemZoom:any;
@@ -82,7 +83,7 @@ decrement(){
       this.animal = result;
     });
   }
-
+  getCart:any = []
 ngOnInit(){
   // console.log(this.route.snapshot.params)
   //this.res=this.route.snapshot.params.id-1
@@ -119,8 +120,16 @@ ChildFrontDisplay(front:any){
   this.cartItem.product_img=front;
 
   }
+  addCartItem:any = []
+ 
+
   addCart(cartData:any){
-    // localStorage.setItem('addCartData',JSON.stringify(cartData));
+    this.addCartService.setAddCartData(cartData);
+    let getStoreCart:any = {};
+    getStoreCart = localStorage.getItem("addCartData")
+    this.addCartItem = getStoreCart?JSON.parse(getStoreCart):[]
+    this.addCartItem.push(cartData)
+    localStorage.setItem('addCartData',JSON.stringify(this.addCartItem));
     localStorage.setItem('quantity',JSON.stringify(this.counter));
     this.router.navigate(['./addcart']);
   }

@@ -1,4 +1,7 @@
 /* for Desktop  */
+body{
+  background-color: #ffffff;
+}
 @media(min-width:1200px){
     .child_img{
     width:37px;
@@ -521,7 +524,7 @@
       font-size: 24px;
     }
     .card-title_1{
-    font-size: 20px;
+    font-size: 16px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:rgb(21, 93, 95);
     text-transform: capitalize;
@@ -1145,7 +1148,7 @@
         font-size: 24px;
       }
       .card-title_1{
-      font-size: 20px;
+      font-size: 16px;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
@@ -1768,7 +1771,7 @@
         font-size: 24px;
       }
       .card-title_1{
-      font-size: 20px;
+      font-size: 16px;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
@@ -1872,13 +1875,15 @@
     @media(min-width:300px) and (max-width:767px){
       .addCart-content{
         text-align: center;
-        height: 400px;
-        line-height: 400px;
-        font-size: 20px;
+        /* height: 400px; */
+        line-height: 40px;
+        font-size: 16px;
         font-family: 'Roboto';
         font-weight: 900;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         color: teal;
+        margin-top: 100px;
+
       }
       .delete_cart{
         cursor: pointer;
@@ -1928,6 +1933,7 @@
         font-size: 14px;
         color:green;
         /* padding: 10px; */
+        height: 180px;
       
       }
       .zoom_addcart_panel{
@@ -2396,7 +2402,7 @@
         font-size: 24px;
       }
       .card-title_1{
-      font-size: 20px;
+      font-size: 16px;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
@@ -2496,5 +2502,22 @@
         font-size: 22px;
         color:black
       }
+      .totalItemValue{
+        font-family: monospace;
+        font-size: 14px;
+        color:green;
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        padding: 0px 30px 80px 30px
+         }
+      .totalAmount{
+        font-size: 18px;
+        font-weight: 900;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:rgb(21, 93, 95);
+        text-transform: capitalize;
+        }
+  
     }
 

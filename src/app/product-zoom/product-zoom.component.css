@@ -632,11 +632,13 @@ margin-right:0px;
 }
 #locationMake{
  font-size: 18px;
- color:rgb(255, 238, 0)
+ color:rgb(255, 238, 0);
+ font-size: 22px;
+
 }
 #locationMake2{
   font-size: 22px;
-  color:black;
+  /* color:black; */
   cursor: pointer;
   
 }
@@ -1258,11 +1260,13 @@ margin-right:0px;
   }
   #locationMake{
    font-size: 18px;
-   color:rgb(255, 238, 0)
+   color:rgb(255, 238, 0);
+   font-size: 22px;
+
   }
   #locationMake2{
     font-size: 22px;
-    color:black
+    /* color:black */
   }
 }
 /* for Mobile  */
@@ -1882,11 +1886,13 @@ margin-right:0px;
   }
   #locationMake{
    font-size: 18px;
-   color:rgb(255, 238, 0)
+   color:rgb(255, 238, 0);
+   font-size: 22px;
+
   }
   #locationMake2{
     font-size: 22px;
-    color:black
+   /* color:black */
   }
 }
 /* For Small Mobile */
@@ -2503,11 +2509,17 @@ margin-right:0px;
   }
   #locationMake{
    font-size: 18px;
-   color:rgb(255, 238, 0)
+   color:rgb(255, 238, 0);
+   font-size: 22px;
+
   }
   #locationMake2{
     font-size: 22px;
-    color:black;
+    /* color:black; */
     cursor: pointer;
   }
+  .delivery_title{
+    position: absolute;
+   }
+ 
 }
