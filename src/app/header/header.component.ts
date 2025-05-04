@@ -60,20 +60,28 @@ export class HeaderComponent implements OnInit {
     // this.formdata = this.fb.group({
     //   userPincode: ['', [Validators.required, Validators.maxLength(6)]],
     // });
-    let cartItem:any;
-    cartItem=localStorage.getItem('addCartData')
-    this.addCartData = JSON.parse(cartItem)
+    // let cartItem:any;
+    // cartItem=localStorage.getItem('addCartData')
+    // this.addCartData = JSON.parse(cartItem)
 
-    this.quantity = localStorage.getItem('quantity')
-    if (this.quantity == null) {
-      this.quantity = 0;
-    }
+    // this.quantity = localStorage.getItem('quantity')
+    // if (this.quantity == null) {
+    //   this.quantity = 0;
+    // }
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(),
       map(value => this._filter(value || '')),
     );
   }
+  ngAfterViewInit(){
+    this.addCartService.getAddCartData()?.subscribe((res:any)=>{
+      this.addCartData = res
+      console.log('addcart',this.addCartData)
+    })
+
+  }
+
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));

@@ -124,14 +124,15 @@ ChildFrontDisplay(front:any){
  
 
   addCart(cartData:any){
-    this.addCartService.setAddCartData(cartData);
+   // this.addCartService.setAddCartData(cartData);
     let getStoreCart:any = {};
     getStoreCart = localStorage.getItem("addCartData")
     this.addCartItem = getStoreCart?JSON.parse(getStoreCart):[]
     this.addCartItem.push(cartData)
-    localStorage.setItem('addCartData',JSON.stringify(this.addCartItem));
+    this.addCartService.setAddCartData(this.addCartItem);
+    //localStorage.setItem('addCartData',JSON.stringify(this.addCartItem));
     localStorage.setItem('quantity',JSON.stringify(this.counter));
-    this.router.navigate(['./addcart']);
+    //this.router.navigate(['./addcart']);
   }
   addDetails(){
     this.router.navigate(['./useraddress'])
