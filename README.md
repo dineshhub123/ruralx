@@ -1,1 +1,1 @@
-# ruralx
+Own E-commerce appliction (RuralX)
