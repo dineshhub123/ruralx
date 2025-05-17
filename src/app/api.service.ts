@@ -18,7 +18,7 @@ export class ApiService {
   apiUploadDataURL:string = environment.uploadDataApiUrl;
   apiInsertUserInfoURL:string = environment.insertUserDetailsApiUrl;
   apiProductNotifyURL:string = environment.getProductNotifyApiUrl;
-  apiProductbuyerURL:string = environment.ProductBuyerApiUrl;
+  apiProductbuyerURL:string = environment.productBuyerApiUrl;
 
   constructor(private http: HttpClient,private router:Router) { }
   
