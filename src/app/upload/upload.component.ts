@@ -48,7 +48,7 @@ export class UploadComponent implements OnInit {
       image_side: image_side,
       image_top: image_top,
       image_triangle: image_triangle,
-      p_category: data?.value?.p_name,
+      p_category: data?.value?.p_category,
       p_image: image_front
     };
     this.apiService.uploadData(uploadDataPayload).subscribe((res:any) =>{

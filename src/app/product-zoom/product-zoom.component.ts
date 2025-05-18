@@ -125,14 +125,15 @@ ChildFrontDisplay(front:any){
  
 
   addCart(cartData:any){
+    cartData["quantity"]= this.counter
    // this.addCartService.setAddCartData(cartData);
-    let getStoreCart:any = {};
-    getStoreCart = localStorage.getItem("addCartData")
-    this.addCartItem = getStoreCart?JSON.parse(getStoreCart):[]
+   // let getStoreCart:any = {};
+   // getStoreCart = localStorage.getItem("addCartData")
+    //this.addCartItem = getStoreCart?JSON.parse(getStoreCart):[]
     this.addCartItem.push(cartData)
     this.addCartService.setAddCartData(this.addCartItem);
     //localStorage.setItem('addCartData',JSON.stringify(this.addCartItem));
-    localStorage.setItem('quantity',JSON.stringify(this.counter));
+    //localStorage.setItem('quantity',JSON.stringify(this.counter));
     //this.router.navigate(['./addcart']);
   }
   addDetails(){
