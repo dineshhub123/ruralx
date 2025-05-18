@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-upload',
