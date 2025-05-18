@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-upload',
@@ -13,6 +14,46 @@ export class UploadComponent implements OnInit {
 
   ngOnInit() {
   }
+htmlContent: string = '';
+ editorConfig = {
+  editable: true,
+  spellcheck: true,
+  height: '300px',
+  minHeight: '0',
+  maxHeight: 'auto',
+  width: '100%',
+  minWidth: '0',
+  translate: 'yes',
+  enableToolbar: true,
+  showToolbar: true,
+  placeholder: 'Enter text here...',
+  defaultParagraphSeparator: 'p',
+  defaultFontName: 'Arial',
+  defaultFontSize: '4',
+  fonts: [
+    { class: 'arial', name: 'Arial' },
+    { class: 'times-new-roman', name: 'Times New Roman' },
+    { class: 'calibri', name: 'Calibri' },
+    { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+  ],
+  customClasses: [
+    {
+      name: 'quote',
+      class: 'quote'
+    },
+    {
+      name: 'redText',
+      class: 'redText'
+    },
+    {
+      name: 'titleText',
+      class: 'titleText',
+      tag: 'h1',
+    }
+  ],
+  
+};
+    
   onSelectFile(ev:any){}
 
   uploadFormData(data:any){
@@ -49,7 +90,8 @@ export class UploadComponent implements OnInit {
       image_top: image_top,
       image_triangle: image_triangle,
       p_category: data?.value?.p_name,
-      p_image: image_front
+      p_image: image_front,
+      p_description: data?.value?.p_description,
     };
     this.apiService.uploadData(uploadDataPayload).subscribe((res:any) =>{
     let displaySearchData = res;
