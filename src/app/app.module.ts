@@ -39,6 +39,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatButtonModule } from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatChipsModule,
     MatIconModule,
     MatSidenavModule,
+    AngularEditorModule,
     //SidebarJSModule.forRoot(),
     RouterModule.forRoot([
       {path:"",component:DashboardComponent},

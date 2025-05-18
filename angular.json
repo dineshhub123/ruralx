@@ -22,7 +22,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+             "glob": "**/*",
+             "input": "node_modules/@kolkov/angular-editor/assets/icons",
+              "output": "assets/ae-icons/"
+            }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
@@ -93,8 +98,24 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
         }
+        
       }
     }
+  },
+  "cli": {
+    "analytics": "9000f443-2fbe-48c6-b7a1-89d99b8394be"
   }
 }
