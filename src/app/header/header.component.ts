@@ -55,14 +55,11 @@ export class HeaderComponent implements OnInit {
       error => console.error(error));
   }
   get f() { return this.formdata.controls; }
-  addCartData:any =[]
+  itemQuantity:number = 0;
   ngOnInit() {
-    // this.formdata = this.fb.group({
-    //   userPincode: ['', [Validators.required, Validators.maxLength(6)]],
-    // });
+
     let cartItem:any;
     cartItem=localStorage.getItem('addCartData')
-    this.addCartData = JSON.parse(cartItem)
 
     this.quantity = localStorage.getItem('quantity')
     if (this.quantity == null) {
@@ -75,10 +72,14 @@ export class HeaderComponent implements OnInit {
     );
   }
   ngAfterViewInit(){
-    this.addCartService.getAddCartData()?.subscribe((res:any)=>{
-      this.addCartData = res
-      console.log('addcart',this.addCartData)
-    })
+    this.addCartService.getAddCartData()?.subscribe(res=>{
+      let addCartData = res;
+                console.log('addCartItem',addCartData)
+
+       this.itemQuantity =  addCartData?.quantity
+
+    });
+
 
   }
 

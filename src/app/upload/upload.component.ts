@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-upload',
@@ -89,7 +88,7 @@ htmlContent: string = '';
       image_side: image_side,
       image_top: image_top,
       image_triangle: image_triangle,
-      p_category: data?.value?.p_name,
+      p_category: data?.value?.p_category,
       p_image: image_front,
       p_description: data?.value?.p_description,
     };

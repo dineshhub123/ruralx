@@ -26,12 +26,12 @@ export class LoginComponent implements OnInit {
         for (let i = 0; res.length > i; i++) {
           this.pass = res[i]?.user_password;
           this.mobile = res[i]?.user_phone;
-        }
         if (loginData?.mobile == this.mobile && loginData?.password == this.pass) {
           this.router.navigate(['dashboard']);
         } else {
           this.loginErrToast = true
           console.log("User Not found Please Register first then Login...!")
+        }
         }
       })
     } else {
