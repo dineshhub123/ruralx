@@ -15,7 +15,7 @@ import { map, startWith } from 'rxjs/operators';
 import { strings } from '@material/chips/deprecated/trailingaction/constants';
 import { DOCUMENT } from '@angular/common';
 import { AddcartService } from '../addcart.service';
-
+import { Product } from '../product-zoom/product-zoom.component';
 export interface DialogData {
   animal: string;
   name: string;
@@ -35,16 +35,17 @@ export class HeaderComponent implements OnInit {
   //opt: string[] = ['mobile', 'fan', 't-shirt', 'telephone', 'jins', 'bicycle', 'shoes'];
   options: string[] = [];
   public filteredOptions: any = [];
-  quantity: any;
   public name: any;
   public animal: any
   data = [];
   zoomId: any;
   searchName: string = "";
-
+  public cartItems: Product[] = [];
   public formdata: any
   public isMenuOpen: boolean = false
-  constructor(@Inject(DOCUMENT) private document: Document,public addCartService:AddcartService,
+  public itemQuantity: number = 0;
+
+  constructor(@Inject(DOCUMENT) private document: Document, public addCartService: AddcartService,
     public dialog: MatDialog, private http: HttpClient, public router: Router, private fb: FormBuilder, private apiService: ApiService) {
     this.apiService.getProductListDetailsData().subscribe((data: any) => {
       let searchList = data.map((item: any) => item.category);
@@ -55,32 +56,20 @@ export class HeaderComponent implements OnInit {
       error => console.error(error));
   }
   get f() { return this.formdata.controls; }
-  itemQuantity:number = 0;
   ngOnInit() {
-
-    let cartItem:any;
-    cartItem=localStorage.getItem('addCartData')
-
-    this.quantity = localStorage.getItem('quantity')
-    if (this.quantity == null) {
-      this.quantity = 0;
-    }
+    this.addCartService.cart$.subscribe(items => {
+      this.cartItems = items
+      this.cartItems = this.addCartService.getCart();
+      let quant = this.cartItems.map((qty: any) => qty?.quantity)
+      this.itemQuantity = quant.reduce((a: any, b: any) => a + b, 0)
+    })
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(),
       map(value => this._filter(value || '')),
     );
   }
-  ngAfterViewInit(){
-    this.addCartService.getAddCartData()?.subscribe(res=>{
-      let addCartData = res;
-                console.log('addCartItem',addCartData)
-
-       this.itemQuantity =  addCartData?.quantity
-
-    });
-
-
+  ngAfterViewInit() {
   }
 
   private _filter(value: string): string[] {
