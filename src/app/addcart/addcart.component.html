@@ -37,7 +37,9 @@
          <mat-icon (click)="deleteCart(cartData)">delete</mat-icon>
      </div>
          <hr>
-        <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price?(cartData.product_price*quantity).toFixed(2):(cartData.product_price).toFixed(2)}} ({{quantity}} item) </strong></h5>
+        <!-- <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price?(cartData.product_price*quantity).toFixed(2):(cartData.product_price).toFixed(2)}} ({{quantity}} item) </strong></h5> -->
+        <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price*cartData.quantity}} ({{cartData.quantity}} item) </strong></h5>
+
         <hr style="border-bottom: 0.1px solid gray;">
       </div>
     </div>

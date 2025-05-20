@@ -8,41 +8,21 @@ import { AddcartService } from '../addcart.service';
   styleUrls: ['./addcart.component.css']
 })
 export class AddcartComponent implements OnInit {
-  addCartData: any;
-  quantity: any;
-  addPrice: any;
-  addcartFlag: boolean = true;
-  emptyCart: boolean = false;
+  addCartData:any;
   totalAmount: any
   unsubscribe: any;
   constructor(private router: Router, public addCartService: AddcartService) {
-    this.unsubscribe = this.addCartService.getAddCartData()?.subscribe((res: any) => {
-      console.log('res', res)
+    this.unsubscribe = this.addCartService.cart$.subscribe((res: any) => {
       this.addCartData = res
     })
 
   }
   ngOnInit() {
     let cartItem: any;
-    cartItem = localStorage.getItem('addCartData')
+    cartItem = localStorage.getItem('cart_items')
     this.addCartData = JSON.parse(cartItem)
-    let totalAmount = this.addCartData.map((total: any) => parseInt(total.product_price))
+    let totalAmount = this.addCartData.map((total: any) => total.product_price*total.quantity)
     this.totalAmount = totalAmount.reduce((a: any, b: any) => a + b, 0)
-    this.quantity = localStorage.getItem('quantity')
-    this.addPrice = this.addCartData.product_price * this.quantity;
-    if (this.quantity == null) {
-      this.quantity = 0;
-    }
-    if (this.quantity == null || this.quantity == 0) {
-      this.addcartFlag = false;
-      this.emptyCart = true;
-    }
-    else {
-      this.addcartFlag = true;
-      this.emptyCart = false;
-
-    }
-
   }
   reloadCurrentRoute() {
     let currentUrl = this.router.url;
@@ -53,11 +33,12 @@ export class AddcartComponent implements OnInit {
 
   deleteCart(deleteCart: any) {
     let deleteItem: any = {};
-    deleteItem = localStorage.getItem('addCartData')
+    deleteItem = localStorage.getItem('cart_items')
     let diTtem = JSON.parse(deleteItem)
     let index = diTtem.findIndex((x: any) => x?.id === deleteCart?.id)
     diTtem.splice(index, 1)
-    localStorage.setItem('addCartData', JSON.stringify(diTtem))
+    localStorage.setItem('cart_items', JSON.stringify(diTtem))
+    this.addCartService.removeCart();
     setTimeout(() => {
       this.reloadCurrentRoute();
     }, 5)
