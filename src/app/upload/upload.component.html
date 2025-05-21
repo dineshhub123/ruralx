@@ -35,45 +35,45 @@
 
     <div class="form-outline mb-4">
           <label class="form-label" for="form11Example4">Image Front</label>
-      <input type="file" id="form11Example4" class="form-control" (change)="onSelectFile($event)" name="image_front"
+      <input type="file" id="form11Example4" class="form-control" (change)="onSelectFile($event, 'image_front')" name="image_front"
         accept="image/png,image/jpeg" ngModel />
   
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="form11Example6">Image Back</label>
-      <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_back"
+      <input type="file" id="form11Example6" class="form-control"(change)="onSelectFile($event, 'image_back')" name="image_back"
         accept="image/png,image/jpeg" ngModel />
     
     </div>
     <div class="form-outline mb-4">
        <label class="form-label" for="form11Example6">Image side</label>
-      <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_side"
+      <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event, 'image_side')" name="image_side"
         accept="image/png,image/jpeg" ngModel />
      
     </div>
     <div class="form-outline mb-4">
         <label class="form-label" for="form11Example6">Image Top</label>
-      <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_top"
+      <input type="file" id="form11Example6" class="form-control"(change)="onSelectFile($event, 'image_top')"
         accept="image/png,image/jpeg" ngModel />
     
     </div>
     <div class="form-outline mb-4">
         <label class="form-label" for="form11Example6">Image Triangle</label>
-      <input type="file" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_triangle"
+      <input type="file" id="form11Example6" class="form-control"(change)="onSelectFile($event, 'image_triangle')"
         accept="image/png,image/jpeg" ngModel />
     
     </div>
     
     <div class="form-outline mb-4">
         <label class="form-label" for="form11Example6">Product Color</label>
-      <input type="text" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_color"
+      <input type="text" id="form11Example6" class="form-control" (change)="onSelectFile($event, 'image_color'  )" name="image_color"
        ngModel />
     
     </div>
      <div class="form-outline mb-4">
         <label class="form-label" for="form11Example6">Product size</label>
-      <input type="text" id="form11Example6" class="form-control" (change)="onSelectFile($event)" name="image_size"
+      <input type="text" id="form11Example6" class="form-control" (change)="onSelectFile($event, 'image_size')" name="image_size"
        ngModel />
     
     </div>

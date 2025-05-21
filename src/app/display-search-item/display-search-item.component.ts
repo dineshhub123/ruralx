@@ -18,8 +18,10 @@ export class DisplaySearchItemComponent implements OnInit {
   }
   itemInitilize(){
     let data:any;
+    console.log(data, 'data');
     data = localStorage.getItem('displaySearchData')
     this.searchItem = JSON.parse(data)
+    console.log(this.searchItem, 'this.searchItem');
   }
   ngAfterViewInit(){
 
