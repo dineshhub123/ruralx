@@ -40,6 +40,7 @@ import { MatButtonModule } from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {AngularEditorModule } from '@kolkov/angular-editor';
+import { ReplacePathPipe } from './replace-path.pipe';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import {AngularEditorModule } from '@kolkov/angular-editor';
     SellNotificationComponent,
     DisplaySearchItemComponent,
     UploadComponent,
+    ReplacePathPipe,
   ],
 
   imports: [

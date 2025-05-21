@@ -29,7 +29,7 @@
   <div class="image-align"(click)="imgClick(searchData)">
   <!-- <img class="product-image" src="./assets/uploads/{{searchData.product_img}}"> -->
 
-  <img class="product-image" src="src/assets/uploads/mobile.png">
+  <img class="product-image" src="{{searchData?.img_front | replacePath:'ruralx/src':'..' }}">
 </div>
   <div class="product-name">{{searchData?.product_name}}</div>
   <div class="product-mrp">MRP : {{searchData.product_mrp_price}}</div>

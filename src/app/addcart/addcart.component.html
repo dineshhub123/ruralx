@@ -10,7 +10,7 @@
   <div class="card-body">
     <div class="col-sm-12">
       <div class="zoom_left_inner_panel">
-        <img style="width:150px;height:150px;"src="assets/img/{{cartData.product_img}}">
+        <img style="width:150px;height:150px;"src="{{cartData.img_front | replacePath:'ruralx/src':'..'}}">
      </div>
     </div>  
     <div>       
@@ -37,9 +37,7 @@
          <mat-icon (click)="deleteCart(cartData)">delete</mat-icon>
      </div>
          <hr>
-        <!-- <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price?(cartData.product_price*quantity).toFixed(2):(cartData.product_price).toFixed(2)}} ({{quantity}} item) </strong></h5> -->
         <h5 class="card-title_1" ><strong> Subtotal : ₹ {{cartData.product_price*cartData.quantity}} ({{cartData.quantity}} item) </strong></h5>
-
         <hr style="border-bottom: 0.1px solid gray;">
       </div>
     </div>
@@ -53,7 +51,7 @@
 <div class="col-md-12" *ngIf="addCartData.length>0">
   <div class="totalItemValue" >  
   <div class="totalAmount mb-3">Total : ₹ {{totalAmount.toFixed(2)}}/- </div> 
-  <button class="btn btn-info btn-rounded btn-md float-right" (click)="addDetails()">Proceed to Buy</button>
+  <button class="btn btn-info btn-rounded btn-md float-right" (click)="addDetails(addCartData)">Proceed to Buy</button>
 </div>
 </div> 
 

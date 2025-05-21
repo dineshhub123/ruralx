@@ -43,8 +43,9 @@ export class AddcartComponent implements OnInit {
       this.reloadCurrentRoute();
     }, 5)
   }
-  addDetails() {
-    this.router.navigate(['./useraddress'])
+  addDetails(cartData:any) {
+    console.log("cartData",cartData)
+    //this.router.navigate(['./useraddress'])
   }
   ngOnDestroy() {
     this.unsubscribe.next()

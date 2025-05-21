@@ -110,7 +110,7 @@ onSelectFile(event: any, field: string): void {
   if (this.selectedFiles['image_triangle']) {
     formData.append('image_triangle', this.selectedFiles['image_triangle']);
   }
-
+console.log("formData",formData)
   this.apiService.uploadData(formData).subscribe((res: any) => {
     console.log('Upload success:', res);
   }, (error) => {
