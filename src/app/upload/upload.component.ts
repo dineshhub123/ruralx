@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UploadComponent implements OnInit {
 
+selectedFiles: { [key: string]: File } = {};
   constructor(private apiService:ApiService,private router:Router) { }
 
   ngOnInit() {
@@ -53,52 +54,68 @@ htmlContent: string = '';
   
 };
     
-  onSelectFile(ev:any){}
-
-  uploadFormData(data:any){
-    let front = data?.value?.image_front
-    let array = front.split("\\");
-    let image_front = array[array.length-1]
-
-    let back = data?.value?.image_back
-    let array2 = back.split("\\");
-    let image_back = array2[array2.length-1]
-
-    let side = data?.value?.image_side
-    let array3 = side.split("\\");
-    let image_side = array3[array3.length-1]
-
-    let top = data?.value?.image_top
-    let array4 = top.split("\\");
-    let image_top = array4[array4.length-1]
-
-    let triangle = data?.value?.image_triangle
-    let array5 = triangle.split("\\");
-    let image_triangle = array5[array5.length-1]
 
 
-    let uploadDataPayload = {
-      p_name: data?.value?.p_name,
-      p_price: data?.value?.p_price,
-      p_mrp: data?.value?.p_mrp,
-      p_discount: data?.value?.p_discount,      
-      delivery_date: data?.value?.delivery_date,
-      image_front: image_front,
-      image_back: image_back,
-      image_side: image_side,
-      image_top: image_top,
-      image_triangle: image_triangle,
-      p_category: data?.value?.p_category,
-      p_image: image_front,
-      p_description: data?.value?.p_description,
-    };
-    this.apiService.uploadData(uploadDataPayload).subscribe((res:any) =>{
-    let displaySearchData = res;
-    console.log('displaySearchData',displaySearchData)
+onSelectFile(event: any, field: string): void {
+  const file: File = event.target.files[0];
 
-    //localStorage.setItem('displaySearchData',JSON.stringify(displaySearchData))
-    //this.router.navigate(['./display-item'])    
-  })
+  if (file) {
+    // Store the selected file in the selectedFiles object
+    this.selectedFiles[field] = file;
+    console.log(`${field} file:`, file.name);
+  }
+}
+
+
+
+ uploadFormData(data: any): void {
+  const formData = new FormData();
+  if (data?.value?.p_name) {
+    formData.append('p_name', data?.value?.p_name);
+  }
+  if (data?.value?.p_price) {
+    formData.append('p_price', data?.value?.p_price);
+  }
+  if (data?.value?.p_mrp) {
+    formData.append('p_mrp', data?.value?.p_mrp);
+  }
+  if (data?.value?.p_discount) {
+    formData.append('p_discount', data?.value?.p_discount);
+  }
+  if (data?.value?.delivery_date) {
+    formData.append('delivery_date', data?.value?.delivery_date);
+  }
+  if (data?.value?.p_category) {
+    formData.append('p_category', data?.value?.p_category);
+  }
+  if (data?.value?.p_description) {
+    formData.append('p_description', data?.value?.p_description);
+  }
+  if (data?.value?.p_image) {
+    formData.append('.p_image', data?.value?.p_image);
+  }
+  if (this.selectedFiles['image_front']) {
+    formData.append('image_front', this.selectedFiles['image_front']);
+
+  }
+  if (this.selectedFiles['image_back']) {
+    formData.append('image_back', this.selectedFiles['image_back']);
+  }
+  if (this.selectedFiles['image_side']) {
+    formData.append('image_side', this.selectedFiles['image_side']);
+  }
+  if (this.selectedFiles['image_top']) {
+    formData.append('image_top', this.selectedFiles['image_top']);
+  }
+  if (this.selectedFiles['image_triangle']) {
+    formData.append('image_triangle', this.selectedFiles['image_triangle']);
+  }
+
+  this.apiService.uploadData(formData).subscribe((res: any) => {
+    console.log('Upload success:', res);
+  }, (error) => {
+    console.error('Upload failed:', error);
+  });
 
     
   }
