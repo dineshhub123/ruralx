@@ -1,21 +1,21 @@
 <div class="zoom_right_inner_panel">
   <img (click)="show()" class="child_img_display" style="width:250px;height:250px;"
-    src="assets/img/{{cartItem.product_img}}">
+    src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
   <div style="text-align: center;">Click over image to Expand</div>
 </div>
 <div class="zoom_left_inner_panel">
-  <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"
-      src="assets/img/{{cartItem.product_img}}"></span>
+  <!-- <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"
+      src="assets/img/{{cartItem.product_img}}"></span> -->
   <span class="child_img" (mouseover)="ChildFrontDisplay(cartItem.img_front)"><img style="width:35px;height:40px;"
-      src="assets/img/{{cartItem.img_front}}"></span>
+      src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}"></span>
   <span class="child_img" (mouseover)="ChildSideDisplay(cartItem.img_side)"><img style="width:35px;height:40px;"
-      src="assets/img/{{cartItem.img_side}}"></span>
+      src="{{cartItem.img_side | replacePath:'ruralx/src':'..'}}"></span>
   <span class="child_img" (mouseover)="ChildBackDisplay(cartItem.img_back)"><img style="width: 35px;height:40px;"
-      src="assets/img/{{cartItem.img_back}}"></span>
+      src="{{cartItem.img_back | replacePath:'ruralx/src':'..'}}"></span>
   <span class="child_img" (mouseover)="ChildTopDisplay(cartItem.img_top)"><img style="width:35px;height:40px;"
-      src="assets/img/{{cartItem.img_top}}"></span>
-  <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"
-      src="assets/img/{{cartItem.product_img}}"></span>
+      src="{{cartItem.img_top | replacePath:'ruralx/src':'..'}}"></span>
+  <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.img_triangle)"><img style="width:35px;height:40px;"
+      src="{{cartItem.img_triangle | replacePath:'ruralx/src':'..'}}"></span>
 </div>
 
 <!-- <a (click) = "show()">
@@ -31,7 +31,7 @@
         <h4 class="modal-title" id="myModalLabel">{{cartItem.product_name}}</h4>
       </div>
       <div class="pop-up-model">
-        <img class="child_img_display" style="width:330px;height:340px;" src="assets/img/{{cartItem.product_img}}">
+        <img class="child_img_display" style="width:330px;height:340px;" src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
 
       </div>
       <div class="modal-footer" style="height: 60px;color:teal;font-weight: 700;">

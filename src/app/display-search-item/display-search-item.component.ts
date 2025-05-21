@@ -12,16 +12,13 @@ export class DisplaySearchItemComponent implements OnInit {
   constructor(public router:Router) { 
 
   }
-
   ngOnInit() {
     this.itemInitilize();
   }
   itemInitilize(){
     let data:any;
-    console.log(data, 'data');
     data = localStorage.getItem('displaySearchData')
     this.searchItem = JSON.parse(data)
-    console.log(this.searchItem, 'this.searchItem');
   }
   ngAfterViewInit(){
 
@@ -31,3 +28,4 @@ export class DisplaySearchItemComponent implements OnInit {
     this.router.navigate(['pzoom'])
   }
 }
+

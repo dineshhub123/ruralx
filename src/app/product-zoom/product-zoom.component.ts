@@ -86,27 +86,27 @@ export class ProductZoomComponent implements OnInit {
   ngOnInit() {
   }
   ChildMasterDisplay(master: any) {
-    this.cartItem.product_img = master;
+    this.cartItem.img_front = master;
 
   }
   ChildTopDisplay(top: any) {
-    this.cartItem.product_img = top;
+    this.cartItem.img_front = top;
 
   }
   ChildSideDisplay(side: any) {
-    this.cartItem.product_img = side;
+    this.cartItem.img_front = side;
 
   }
   ChildBackDisplay(back: any) {
-    this.cartItem.product_img = back;
+    this.cartItem.img_front = back;
 
   }
   ChildTriangleDisplay(triangle: any) {
-    this.cartItem.product_img = triangle;
+    this.cartItem.img_front = triangle;
 
   }
   ChildFrontDisplay(front: any) {
-    this.cartItem.product_img = front;
+    this.cartItem.img_front = front;
 
   }
   addCartItem: any = []
