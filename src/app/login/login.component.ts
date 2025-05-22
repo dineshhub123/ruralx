@@ -26,7 +26,10 @@ export class LoginComponent implements OnInit {
         for (let i = 0; res.length > i; i++) {
           this.pass = res[i]?.user_password;
           this.mobile = res[i]?.user_phone;
-        if (loginData?.mobile == this.mobile && loginData?.password == this.pass) {
+        if (loginData?.mobile === this.mobile && loginData?.password === this.pass) {
+          const findObject =  res.find((item:any)=>(item.user_password === loginData?.password && item?.user_phone === loginData?.mobile))
+          localStorage.setItem('login_user', JSON.stringify(findObject))
+          this.loginService.setUser(findObject)
           this.router.navigate(['dashboard']);
         } else {
           this.loginErrToast = true
@@ -44,4 +47,7 @@ export class LoginComponent implements OnInit {
 
     }
   }
+}
+export interface signUser {
+user_first_name:string
 }

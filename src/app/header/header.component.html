@@ -11,7 +11,8 @@
         <a (click)="loginPage()" style="cursor: pointer;" placement="bottom">
           <mat-icon id="signMake" aria-hidden="false" aria-label="logout icon" fontIcon="login" [ariaSetSize]="50"
             color="warn"></mat-icon>
-          Hello, Sign in<br><strong>Account
+        Hello, {{(user?user:'Sign in')|titlecase }} 
+          <br><strong>Account
             & Lists</strong>
         </a>
       </li>
@@ -66,7 +67,7 @@
   <div class="col-sm-12"> 
     <div class="sidbarheader">
 		<div class="userImage">D</div>
-		<div class="userAccountName">HELLO ,  DINESH </div>
+		<div class="userAccountName">HELLO ,  {{(user?user:'Unknown')| titlecase }} </div>
 	</div>
   </div>
 </nav>
