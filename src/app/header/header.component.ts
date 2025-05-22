@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 //import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { switchMap, debounceTime, tap, finalize } from 'rxjs/operators';
 import { User, IUserResponse } from './user.class';
-import { Observable } from 'rxjs'
+import { Observable, Subscriber } from 'rxjs'
 import { ApiService } from '../api.service';
 import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
@@ -16,6 +16,7 @@ import { strings } from '@material/chips/deprecated/trailingaction/constants';
 import { DOCUMENT } from '@angular/common';
 import { AddcartService } from '../addcart.service';
 import { Product } from '../product-zoom/product-zoom.component';
+import { LoginService } from '../login.service';
 export interface DialogData {
   animal: string;
   name: string;
@@ -44,8 +45,8 @@ export class HeaderComponent implements OnInit {
   public formdata: any
   public isMenuOpen: boolean = false
   public itemQuantity: number = 0;
-
-  constructor(@Inject(DOCUMENT) private document: Document, public addCartService: AddcartService,
+  user: any;
+  constructor(@Inject(DOCUMENT) private document: Document, public addCartService: AddcartService, public loginService: LoginService,
     public dialog: MatDialog, private http: HttpClient, public router: Router, private fb: FormBuilder, private apiService: ApiService) {
     this.apiService.getProductListDetailsData().subscribe((data: any) => {
       let searchList = data.map((item: any) => item.category);
@@ -54,6 +55,9 @@ export class HeaderComponent implements OnInit {
       this.options = filterArray;
     },
       error => console.error(error));
+      this.loginService.user$.subscribe((user: any) => {
+      this.user = user?.user_first_name;
+    });
   }
   get f() { return this.formdata.controls; }
   ngOnInit() {
