@@ -41,6 +41,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {AngularEditorModule } from '@kolkov/angular-editor';
 import { ReplacePathPipe } from './replace-path.pipe';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,7 @@ import { ReplacePathPipe } from './replace-path.pipe';
     //AngularFontAwesomeModule,
     MatButtonModule,
     MatAutocompleteModule,
+    MatTableModule,
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,

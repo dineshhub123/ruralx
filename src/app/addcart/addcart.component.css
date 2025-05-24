@@ -2518,6 +2518,13 @@ body{
         color:rgb(21, 93, 95);
         text-transform: capitalize;
         }
-  
+  .checkUser{
+        font-size: 15px;
+        font-weight: 500;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:rgb(21, 93, 95);
+        text-align: center;
+
+  }
     }
 

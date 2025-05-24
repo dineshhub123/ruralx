@@ -19,6 +19,7 @@ export class ApiService {
   apiInsertUserInfoURL:string = environment.insertUserDetailsApiUrl;
   apiProductNotifyURL:string = environment.getProductNotifyApiUrl;
   apiProductbuyerURL:string = environment.productBuyerApiUrl;
+  apiBuyerDataURL:string = environment.getBuyerDataApiUrl;
 
   constructor(private http: HttpClient,private router:Router) { }
   
@@ -61,5 +62,8 @@ export class ApiService {
   }
   ProductBuyerDetails(object:any): Observable<any> {
     return this.http.post(this.apiProductbuyerURL,object).pipe(map((res: any) => res));
+  }
+  getUserBuyerDetails():Observable<any> {
+    return this.http.get(this.apiBuyerDataURL).pipe(map((res:any)=>res))
   }
 }

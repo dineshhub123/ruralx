@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { ApiService } from '../api.service';
@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 })
 export class LoginComponent implements OnInit {
   public loginErrToast: boolean = false;
-  constructor(public router: Router, public loginService: LoginService, private apiService: ApiService) { }
+  constructor(public router: Router, public loginService: LoginService, private apiService: ApiService, private ngZone: NgZone) { }
   pass: any
   mobile: any
   ngOnInit() {
@@ -23,19 +23,18 @@ export class LoginComponent implements OnInit {
     let checkAdminLogin = this.loginService.adminLoginCheckFn(loginData.mobile, loginData.password);
     if (checkAdminLogin == false) {
       this.apiService.getUserDetailsData().subscribe((res) => {
-        for (let i = 0; res.length > i; i++) {
-          this.pass = res[i]?.user_password;
-          this.mobile = res[i]?.user_phone;
-        if (loginData?.mobile === this.mobile && loginData?.password === this.pass) {
+        res.forEach((element:any) => {
+        if (loginData?.mobile === element?.user_phone && loginData?.password === element?.user_password) {
           const findObject =  res.find((item:any)=>(item.user_password === loginData?.password && item?.user_phone === loginData?.mobile))
           localStorage.setItem('login_user', JSON.stringify(findObject))
-          this.loginService.setUser(findObject)
+          this.loginService.setUsername(findObject?.user_first_name);
           this.router.navigate(['dashboard']);
-        } else {
+        } 
+        else {
           this.loginErrToast = true
-          console.log("User Not found Please Register first then Login...!")
+          //console.log("User Not found Please Register first then Login...!")
         }
-        }
+       });
       })
     } else {
       if (checkAdminLogin == true) {
@@ -47,7 +46,11 @@ export class LoginComponent implements OnInit {
 
     }
   }
-}
-export interface signUser {
-user_first_name:string
+    reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
 }

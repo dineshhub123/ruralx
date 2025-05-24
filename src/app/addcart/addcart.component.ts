@@ -11,26 +11,11 @@ export class AddcartComponent implements OnInit {
   addCartData: any;
   totalAmount: any
   unsubscribe: any;
-  firstname: any;
-  lastname: any;
-  email: any;
-  phone: any;
-  pass: any;
-  address: any;
-  pin: any;
+  checkUserExiest:boolean = false;
   constructor(private router: Router, public addCartService: AddcartService, public apiService: ApiService) {
     this.unsubscribe = this.addCartService.cart$.subscribe((res: any) => {
       this.addCartData = res
     })
-    let loginUser: any = localStorage.getItem("login_user")
-    let exiestUser = JSON.parse(loginUser)
-    this.firstname = exiestUser?.user_first_name;
-    this.lastname = exiestUser?.user_last_name;
-    this.email = exiestUser?.user_email;
-    this.phone = exiestUser?.user_phone;
-    this.pass = exiestUser?.user_password;
-    this.address = exiestUser?.user_address;
-    this.pin = exiestUser?.user_pincode;
   }
 
   ngOnInit() {
@@ -59,30 +44,48 @@ export class AddcartComponent implements OnInit {
       this.reloadCurrentRoute();
     }, 5)
   }
-  addDetails(cartData: []) {
-    let userBuyerArr: any = []
-    cartData.forEach((item: any, index: number) => {
-      const cart = {
-        u_firstname: this.firstname,
-        u_lastname: this.lastname,
-        u_email: this.email,
-        u_phone: this.phone,
-        u_password: this.pass,
-        u_address: this.address,
-        u_pincode: this.pin,
-        p_name: item?.product_name,
-        p_price: item?.product_price,
-        p_mrp: item?.product_mrp_price,
-        p_discount: item?.product_discount,
-        delivery_date: item?.delivery_date,
-        image_front: item?.img_front,
-        p_category: item?.category,
+  proceedBuyItem(cartData: []) {
+    const storedUserString = localStorage.getItem("login_user");
+    if (storedUserString) {
+      const exiestUser = JSON.parse(storedUserString);
+      if (exiestUser) {
+        let userBuyerPayload: any = []
+        cartData.forEach((item: any, index: number) => {
+          console.log("item",item)
+          const cart = {
+            u_firstname: exiestUser?.user_first_name,
+            u_lastname: exiestUser?.user_last_name,
+            u_email: exiestUser?.user_email,
+            u_phone: exiestUser?.user_phone,
+            u_password: exiestUser?.user_password,
+            u_address: exiestUser?.user_address,
+            u_pincode: exiestUser?.user_pincode,
+            p_name: item?.product_name,
+            p_price: item?.product_price,
+            p_mrp: item?.product_mrp_price,
+            p_discount: item?.product_discount,
+            delivery_date: item?.delivery_date,
+            image_front: item?.img_front,
+            p_category: item?.category,
+            p_quantity : item?.quantity,
+            p_buy_time: "12:45:22",
+            p_description : item?.product_description 
+          }
+          userBuyerPayload.push(cart)
+          console.log(userBuyerPayload)
+        })
+        this.apiService.ProductBuyerDetails(userBuyerPayload).subscribe(res => {
+        })
+        this.router.navigate(['./useraddress'])
       }
-      userBuyerArr.push(cart)
-    })
-    this.apiService.ProductBuyerDetails(userBuyerArr).subscribe(res => {
-    })
-    //this.router.navigate(['./useraddress'])
+    } else {
+      this.checkUserExiest = true;
+      setTimeout(()=>{
+      this.checkUserExiest = false;
+      this.router.navigate(['./login'])
+      },4000)
+
+    }
 
   }
 
