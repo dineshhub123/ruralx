@@ -30,7 +30,9 @@
                   <div class="pt-1 mb-4">
                     <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
                     <p></p>
+                    <div class="loginErr">
                     <mat-error *ngIf="loginErrToast">User Not found Please Register first then Login...!</mat-error>
+                    </div>
                   </div>
 
                   <a class="small text-muted" href="#!">Forgot password?</a>

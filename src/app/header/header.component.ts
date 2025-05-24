@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, Inject, ChangeDetectorRef, NgZone } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -45,8 +45,8 @@ export class HeaderComponent implements OnInit {
   public formdata: any
   public isMenuOpen: boolean = false
   public itemQuantity: number = 0;
-  user: any;
-  constructor(@Inject(DOCUMENT) private document: Document, public addCartService: AddcartService, public loginService: LoginService,
+  username: string | null = null;
+  constructor(@Inject(DOCUMENT) private document: Document, public addCartService: AddcartService, public loginService: LoginService, private cdRef: ChangeDetectorRef,private zone: NgZone,
     public dialog: MatDialog, private http: HttpClient, public router: Router, private fb: FormBuilder, private apiService: ApiService) {
     this.apiService.getProductListDetailsData().subscribe((data: any) => {
       let searchList = data.map((item: any) => item.category);
@@ -55,12 +55,14 @@ export class HeaderComponent implements OnInit {
       this.options = filterArray;
     },
       error => console.error(error));
-      this.loginService.user$.subscribe((user: any) => {
-      this.user = user?.user_first_name;
-    });
   }
   get f() { return this.formdata.controls; }
   ngOnInit() {
+     this.loginService.username$.subscribe((name: any) => {
+        this.zone.run(() => {
+      this.username = name;
+        });
+    });
     this.addCartService.cart$.subscribe(items => {
       this.cartItems = items
       this.cartItems = this.addCartService.getCart();
@@ -74,6 +76,7 @@ export class HeaderComponent implements OnInit {
     );
   }
   ngAfterViewInit() {
+
   }
 
   private _filter(value: string): string[] {
