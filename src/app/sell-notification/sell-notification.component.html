@@ -21,12 +21,12 @@
     <td mat-cell *matCellDef="let sellData"> {{ sellData.product_discount }} </td>
   </ng-container>
     <ng-container matColumnDef="Product Description">
-    <th mat-header-cell *matHeaderCellDef> Product Description </th>
-    <td mat-cell *matCellDef="let sellData"> {{ sellData.product_description }} </td>
+    <th mat-header-cell *matHeaderCellDef [style.width.px]="sellItemData.width"> Product Description </th>
+    <td mat-cell *matCellDef="let sellData" [innerHTML]="sellData.product_description"> </td>
   </ng-container>
-    <ng-container matColumnDef="Product Image">
+    <ng-container matColumnDef="Product Image" style="width: 200px;">
     <th mat-header-cell *matHeaderCellDef> Product Image </th>
-    <td mat-cell *matCellDef="let sellData"> {{ sellData.img_front | replacePath:'ruralx/src':'..' }} </td>
+    <td mat-cell *matCellDef="let sellData"> <img class="img-responsive img-tbl" [src]="sellData.img_front.replace('ruralx/src', '..')" alt="Front Image"> </td>
   </ng-container>
     <ng-container matColumnDef="Buy Time">
     <th mat-header-cell *matHeaderCellDef> Buy Time </th>
