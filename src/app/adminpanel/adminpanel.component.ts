@@ -3,6 +3,7 @@ import { HttpClient,HttpEventType } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-adminpanel',
@@ -16,8 +17,13 @@ export class AdminpanelComponent implements OnInit {
   public retrievedImage:any;
   public imageUrl = null;
   public selectedFile:any;
+  public sellItemData:any
+  public buyerUsername: any;
+ public getNotifyUserArray:any;
 
-  constructor(private http:HttpClient,private _DomSanitizationService:DomSanitizer,public router:Router) { 
+  
+
+  constructor(private http:HttpClient,private _DomSanitizationService:DomSanitizer,public router:Router, public apiService: ApiService) { 
 
     this.http.get("http://192.168.43.205/employee.php",{ responseType: 'blob' }).subscribe((res:any) => {
       
@@ -30,6 +36,7 @@ export class AdminpanelComponent implements OnInit {
   }
 
   ngOnInit() {
+     this.userlist()
   }
 
   onSelectFile(event:any){
@@ -47,8 +54,6 @@ const uploadData= new FormData();
      }).subscribe((res:object) => {
      this.data.push(res);
      console.log(res)
-     
-    
     })
 
   }
@@ -61,7 +66,36 @@ const uploadData= new FormData();
   adminLogout(){
     localStorage.removeItem('adminMobile');
     this.router.navigate(["dashboard"]);
+  }
+
+  userlist() {
+    this.apiService.getUserBuyerDetails().subscribe((Response: any) => {
+     this.sellItemData = Response
+     let userlistData=this.sellItemData.map((item: any) => 
+     item.user_phone)
+     let removeDuplicates=new Set(userlistData)
+     this.buyerUsername=[...removeDuplicates];
+    this.getNotifyUserArray = []; 
+     for (let i = 0; i < this.buyerUsername.length; i++) {
+    let  getNotifyUser=this.sellItemData.find((item:any) => item.user_phone=== this.buyerUsername[i])
+    if (getNotifyUser) {
+    this.getNotifyUserArray.push(getNotifyUser);
+    console.log("getObject", this.getNotifyUserArray);
+  }
+   
+    }
+});}
+
+
+  openNotification() {
 
   }
 
+  closeNotification() {
+    
+  }
+
 }
+
+
+
