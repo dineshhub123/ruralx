@@ -17,7 +17,6 @@ body{
     }
 
     .zoom_left_inner_panel{
-    font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     color:green;
     padding: 0px;
@@ -32,7 +31,6 @@ body{
       cursor: pointer;
     }
     .zoom_right_inner_panel{
-    font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     color:green;
     padding: 10px;
@@ -41,7 +39,6 @@ body{
     
     }
     .zoom_right_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 10px;
@@ -55,7 +52,6 @@ body{
     width: 100%;
     float: right;
     color:black;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:white;
     box-shadow: 0px 3px 6px 1px grey;
     
@@ -83,7 +79,6 @@ body{
     .acc {
     font-size: 39px;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 2px;
     font-weight: bold;
     line-height: 15px;
@@ -99,7 +94,6 @@ body{
     line-height: 22px;
      float: right;
     margin-top: 10px;
-    font-family:'Times New Roman', Times, serif;
     
     }
     .accSpan{
@@ -131,8 +125,7 @@ body{
       z-index: 1;
       margin-top: 23px;
       left:83%;
-      margin-left: -135px;  
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin-left: -135px; 
     }
     .tooltiptext2{
       visibility: hidden;
@@ -148,8 +141,7 @@ body{
       z-index: 1;
       margin-top: 23px;
       left:91.5%;
-      margin-left: -220px;  
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin-left: -220px;
     }
     .accountInfo{
       text-align:left;
@@ -167,7 +159,6 @@ body{
       
     font-size: 12px;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 4px;
     font-weight: bold;
     }
@@ -184,7 +175,6 @@ body{
       height:auto;
       background-color:teal;
       color: white;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
       padding: 10px;
       box-sizing: border-box;
       
@@ -206,32 +196,9 @@ body{
         font-size: 25px;
         text-align: center;
       }
-      /* .Box{
-        position: absolute;
-        display: flex;
-        width:100%;
-        top:100px;
-        left: 50%;
-        transform:translate(-50%,-50%);
-        box-shadow: 0px 3px 6px -4px grey;
-        padding: 10px;
-    
-      }
-      .parent{
-        width: 200px;
-        background-color: burlywood;
-        height: 30px;
-        float: left;
-      }
-      .child{
-        width: 200px;
-        background-color: cadetblue;
-        height: 30px;
-        float: left;
-      } */
+     
       .content_align{
         font-size: 16px;
-        font-family:Cambria, Cochin;
         color: white;
         text-align: justify;
         width: 100%;
@@ -266,7 +233,6 @@ body{
       box-shadow: 0px 3px 6px -4px grey;
       line-height: 25px;
       padding: 5px;
-      font-family: 'Times New Roman', Times, serif;
       margin-bottom: 10px;
     
     }
@@ -283,7 +249,6 @@ body{
     border-radius: 13px;
     width:92%;
     font-size: 13px;
-    font-family: Cambria, Cochin, Georgia, Times;
     height: 25px;
     margin-right: 15px;
     
@@ -304,7 +269,6 @@ body{
       box-sizing: border-box;
       font-size: 35px;
       font-weight: bold;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       margin-top: 2px;
       margin-bottom: 3px;
       margin-left: 0px;
@@ -342,7 +306,6 @@ body{
         text-align: justify;
       }
       h3{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-size: 18px;
         color:red;
     
@@ -361,7 +324,6 @@ body{
         color: white;
         font-size: 14px;
         color:rgb(235, 144, 26);
-        font-family:Cambria, Cochin;
         color: #01031b;
     
       }
@@ -384,7 +346,6 @@ body{
       width: 100%;
       text-align: center;
       font-size: bold;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
       color:wheat;
       background-color:rgb(70, 18, 20);
       height:40px;
@@ -399,7 +360,6 @@ body{
     }
     .content_align{
       font-size: 16px;
-      font-family:Cambria, Cochin;
       color: wheat;
       text-align: justify;
       width: 100%;
@@ -499,14 +459,12 @@ body{
     .brand_1{
       font-size: 12px;
       font-weight: bold;
-      font-family:sans-serif;
       color: rgb(107, 104, 104);
     
     }
     .card-body p{
       font-size: 12px;
       font-weight: bold;
-      font-family:sans-serif;
       color: rgb(107, 104, 104);
     
     }
@@ -525,7 +483,6 @@ body{
     }
     .card-title_1{
     font-size: 16px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:rgb(21, 93, 95);
     text-transform: capitalize;
     
@@ -533,7 +490,6 @@ body{
     .delevery_date{
       color:black;
       font-weight: bold;
-      font-family:sans-serif;
       font-size: 1.1em;
     
     }
@@ -640,7 +596,6 @@ body{
       
       }
       .zoom_left_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 0px;
@@ -656,7 +611,6 @@ body{
         cursor: pointer;
       }
       .zoom_right_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 10px;
@@ -665,7 +619,6 @@ body{
       
       }
       .zoom_right_panel{
-        font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
         color:green;
         padding: 10px;
@@ -679,7 +632,6 @@ body{
       width: 100%;
       float: right;
       color:black;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color:white;
       box-shadow: 0px 3px 6px 1px grey;
       
@@ -707,7 +659,6 @@ body{
       .acc {
       font-size: 39px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 2px;
       font-weight: bold;
       line-height: 15px;
@@ -723,7 +674,7 @@ body{
       line-height: 22px;
        float: right;
       margin-top: 10px;
-      font-family:'Times New Roman', Times, serif;
+  
       
       }
       .accSpan{
@@ -755,8 +706,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:83%;
-        margin-left: -135px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -135px;
       }
       .tooltiptext2{
         visibility: hidden;
@@ -772,8 +722,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:91.5%;
-        margin-left: -220px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -220px; 
       }
       .accountInfo{
         text-align:left;
@@ -791,7 +740,6 @@ body{
         
       font-size: 12px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 4px;
       font-weight: bold;
       }
@@ -808,7 +756,6 @@ body{
         height:auto;
         background-color:teal;
         color: white;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
         padding: 10px;
         box-sizing: border-box;
         
@@ -830,32 +777,9 @@ body{
           font-size: 25px;
           text-align: center;
         }
-        /* .Box{
-          position: absolute;
-          display: flex;
-          width:100%;
-          top:100px;
-          left: 50%;
-          transform:translate(-50%,-50%);
-          box-shadow: 0px 3px 6px -4px grey;
-          padding: 10px;
-      
-        }
-        .parent{
-          width: 200px;
-          background-color: burlywood;
-          height: 30px;
-          float: left;
-        }
-        .child{
-          width: 200px;
-          background-color: cadetblue;
-          height: 30px;
-          float: left;
-        } */
+       
         .content_align{
           font-size: 16px;
-          font-family:Cambria, Cochin;
           color: white;
           text-align: justify;
           width: 100%;
@@ -890,7 +814,6 @@ body{
         box-shadow: 0px 3px 6px -4px grey;
         line-height: 25px;
         padding: 5px;
-        font-family: 'Times New Roman', Times, serif;
         margin-bottom: 10px;
       
       }
@@ -907,7 +830,6 @@ body{
       border-radius: 13px;
       width:92%;
       font-size: 13px;
-      font-family: Cambria, Cochin, Georgia, Times;
       height: 25px;
       margin-right: 15px;
       
@@ -928,7 +850,6 @@ body{
         box-sizing: border-box;
         font-size: 35px;
         font-weight: bold;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         margin-top: 2px;
         margin-bottom: 3px;
         margin-left: 0px;
@@ -966,7 +887,6 @@ body{
           text-align: justify;
         }
         h3{
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           font-size: 18px;
           color:red;
       
@@ -985,7 +905,6 @@ body{
           color: white;
           font-size: 14px;
           color:rgb(235, 144, 26);
-          font-family:Cambria, Cochin;
           color: #01031b;
       
         }
@@ -1008,7 +927,6 @@ body{
         width: 100%;
         text-align: center;
         font-size: bold;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         color:wheat;
         background-color:rgb(70, 18, 20);
         height:40px;
@@ -1023,7 +941,6 @@ body{
       }
       .content_align{
         font-size: 16px;
-        font-family:Cambria, Cochin;
         color: wheat;
         text-align: justify;
         width: 100%;
@@ -1123,14 +1040,12 @@ body{
       .brand_1{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
       .card-body p{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
@@ -1149,7 +1064,6 @@ body{
       }
       .card-title_1{
       font-size: 16px;
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
       
@@ -1157,7 +1071,6 @@ body{
       .delevery_date{
         color:black;
         font-weight: bold;
-        font-family:sans-serif;
         font-size: 1.1em;
       
       }
@@ -1264,7 +1177,6 @@ body{
       
       }
       .zoom_left_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 0px;
@@ -1279,7 +1191,6 @@ body{
         cursor: pointer;
       }
       .zoom_right_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 10px;
@@ -1288,7 +1199,6 @@ body{
       
       }
       .zoom_right_panel{
-        font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
         color:green;
         padding: 10px;
@@ -1302,7 +1212,6 @@ body{
       width: 100%;
       float: right;
       color:black;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color:white;
       box-shadow: 0px 3px 6px 1px grey;
       
@@ -1330,7 +1239,6 @@ body{
       .acc {
       font-size: 39px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 2px;
       font-weight: bold;
       line-height: 15px;
@@ -1346,7 +1254,6 @@ body{
       line-height: 22px;
        float: right;
       margin-top: 10px;
-      font-family:'Times New Roman', Times, serif;
       
       }
       .accSpan{
@@ -1378,8 +1285,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:83%;
-        margin-left: -135px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -135px;
       }
       .tooltiptext2{
         visibility: hidden;
@@ -1395,8 +1301,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:91.5%;
-        margin-left: -220px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -220px;
       }
       .accountInfo{
         text-align:left;
@@ -1411,10 +1316,8 @@ body{
       }
       
       .account{
-        
       font-size: 12px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 4px;
       font-weight: bold;
       }
@@ -1431,7 +1334,6 @@ body{
         height:auto;
         background-color:teal;
         color: white;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
         padding: 10px;
         box-sizing: border-box;
         
@@ -1453,32 +1355,8 @@ body{
           font-size: 25px;
           text-align: center;
         }
-        /* .Box{
-          position: absolute;
-          display: flex;
-          width:100%;
-          top:100px;
-          left: 50%;
-          transform:translate(-50%,-50%);
-          box-shadow: 0px 3px 6px -4px grey;
-          padding: 10px;
-      
-        }
-        .parent{
-          width: 200px;
-          background-color: burlywood;
-          height: 30px;
-          float: left;
-        }
-        .child{
-          width: 200px;
-          background-color: cadetblue;
-          height: 30px;
-          float: left;
-        } */
         .content_align{
           font-size: 16px;
-          font-family:Cambria, Cochin;
           color: white;
           text-align: justify;
           width: 100%;
@@ -1513,7 +1391,6 @@ body{
         box-shadow: 0px 3px 6px -4px grey;
         line-height: 25px;
         padding: 5px;
-        font-family: 'Times New Roman', Times, serif;
         margin-bottom: 10px;
       
       }
@@ -1530,7 +1407,6 @@ body{
       border-radius: 13px;
       width:92%;
       font-size: 13px;
-      font-family: Cambria, Cochin, Georgia, Times;
       height: 25px;
       margin-right: 15px;
       
@@ -1551,7 +1427,6 @@ body{
         box-sizing: border-box;
         font-size: 35px;
         font-weight: bold;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         margin-top: 2px;
         margin-bottom: 3px;
         margin-left: 0px;
@@ -1589,7 +1464,6 @@ body{
           text-align: justify;
         }
         h3{
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           font-size: 18px;
           color:red;
       
@@ -1608,7 +1482,6 @@ body{
           color: white;
           font-size: 14px;
           color:rgb(235, 144, 26);
-          font-family:Cambria, Cochin;
           color: #01031b;
       
         }
@@ -1631,7 +1504,6 @@ body{
         width: 100%;
         text-align: center;
         font-size: bold;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         color:wheat;
         background-color:rgb(70, 18, 20);
         height:40px;
@@ -1646,7 +1518,6 @@ body{
       }
       .content_align{
         font-size: 16px;
-        font-family:Cambria, Cochin;
         color: wheat;
         text-align: justify;
         width: 100%;
@@ -1746,14 +1617,12 @@ body{
       .brand_1{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
       .card-body p{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
@@ -1772,14 +1641,12 @@ body{
       }
       .card-title_1{
       font-size: 16px;
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
       }
       .delevery_date{
         color:black;
         font-weight: bold;
-        font-family:sans-serif;
         font-size: 1.1em;
       
       }
@@ -1878,7 +1745,6 @@ body{
         /* height: 400px; */
         line-height: 40px;
         font-size: 16px;
-        font-family: 'Roboto';
         font-weight: 900;
         /* text-transform: uppercase; */
         color: teal;
@@ -1905,7 +1771,6 @@ body{
       
       }
       .zoom_left_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 0px;
@@ -1920,7 +1785,6 @@ body{
         cursor: pointer;
       }
       .zoom_right_inner_panel{
-      font-family: 'Times New Roman', Times, serif;
       font-size: 14px;
       color:green;
       padding: 10px;
@@ -1929,7 +1793,6 @@ body{
       
       }
       .zoom_right_panel{
-        font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
         color:green;
         /* padding: 10px; */
@@ -1946,7 +1809,6 @@ body{
       width: 100%;
       float: right;
       color:black;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color:white;
       box-shadow: 0px 3px 6px 1px grey;
       
@@ -1974,7 +1836,6 @@ body{
       .acc {
       font-size: 39px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 2px;
       font-weight: bold;
       line-height: 15px;
@@ -1992,7 +1853,6 @@ body{
       line-height: 22px;
       float: right;
       margin-top: 10px;
-      font-family:'Times New Roman', Times, serif;
       
       }
       .accSpan{
@@ -2026,8 +1886,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:83%;
-        margin-left: -135px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -135px; 
       }
       .tooltiptext2{
         visibility: hidden;
@@ -2045,8 +1904,7 @@ body{
         z-index: 1;
         margin-top: 23px;
         left:91.5%;
-        margin-left: -220px;  
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -220px; 
       }
       .accountInfo{
         text-align:left;
@@ -2064,7 +1922,6 @@ body{
         
       font-size: 12px;
       color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: 4px;
       font-weight: bold;
       }
@@ -2085,7 +1942,6 @@ body{
         height:auto;
         background-color:teal;
         color: white;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
         padding: 10px;
         box-sizing: border-box;
         
@@ -2109,7 +1965,6 @@ body{
         }
         .content_align{
           font-size: 16px;
-          font-family:Cambria, Cochin;
           color: white;
           text-align: justify;
           width: 100%;
@@ -2144,7 +1999,6 @@ body{
         box-shadow: 0px 3px 6px -4px grey;
         line-height: 25px;
         padding: 5px;
-        font-family: 'Times New Roman', Times, serif;
         margin-bottom: 10px;
       
       }
@@ -2161,7 +2015,6 @@ body{
       border-radius: 13px;
       width:92%;
       font-size: 13px;
-      font-family: Cambria, Cochin, Georgia, Times;
       height: 25px;
       margin-right: 15px;
       
@@ -2182,7 +2035,6 @@ body{
         box-sizing: border-box;
         font-size: 35px;
         font-weight: bold;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         margin-top: 2px;
         margin-bottom: 3px;
         margin-left: 0px;
@@ -2220,7 +2072,6 @@ body{
           text-align: justify;
         }
         h3{
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           font-size: 18px;
           color:red;
       
@@ -2239,7 +2090,6 @@ body{
           color: white;
           font-size: 14px;
           color:rgb(235, 144, 26);
-          font-family:Cambria, Cochin;
           color: #01031b;
       
         }
@@ -2262,7 +2112,6 @@ body{
         width: 100%;
         text-align: center;
         font-size: bold;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         color:wheat;
         background-color:rgb(70, 18, 20);
         height:40px;
@@ -2277,7 +2126,6 @@ body{
       }
       .content_align{
         font-size: 16px;
-        font-family:Cambria, Cochin;
         color: wheat;
         text-align: justify;
         width: 100%;
@@ -2377,14 +2225,12 @@ body{
       .brand_1{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
       .card-body p{
         font-size: 12px;
         font-weight: bold;
-        font-family:sans-serif;
         color: rgb(107, 104, 104);
       
       }
@@ -2403,7 +2249,6 @@ body{
       }
       .card-title_1{
       font-size: 16px;
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color:rgb(21, 93, 95);
       text-transform: capitalize;
       
@@ -2411,7 +2256,6 @@ body{
       .delevery_date{
         color:black;
         font-weight: bold;
-        font-family:sans-serif;
         font-size: 1.1em;
       
       }
@@ -2503,7 +2347,6 @@ body{
         color:black
       }
       .totalItemValue{
-        font-family: monospace;
         font-size: 14px;
         color:green;
         position: absolute;
@@ -2514,17 +2357,14 @@ body{
       .totalAmount{
         font-size: 18px;
         font-weight: 900;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color:rgb(21, 93, 95);
         text-transform: capitalize;
         }
   .checkUser{
         font-size: 15px;
         font-weight: 500;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color:rgb(21, 93, 95);
         text-align: center;
-
   }
     }
 
