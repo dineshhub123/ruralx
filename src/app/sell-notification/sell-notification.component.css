@@ -10,3 +10,29 @@ img.img-responsive.img-tbl {
     height: 50px;
     border:1px solid #ddd;
 }
+::ng-deep mat-table, 
+::ng-deep mat-header-row, 
+::ng-deep mat-row, 
+::ng-deep mat-cell, 
+::ng-deep mat-header-cell {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Apply Poppins to the entire mat-table */
+mat-table, mat-header-row, mat-row, mat-cell, mat-header-cell {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+::ng-deep tbody.mdc-data-table__content td,
+::ng-deep tbody.mdc-data-table__content th {
+    font-family: 'Poppins', sans-serif !important;
+}
+::ng-deep .mat-mdc-table .mat-mdc-header-cell {
+    background: inherit;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+::ng-deep td.mat-mdc-cell.mdc-data-table__cell.cdk-cell.wide-column.innercontent.cdk-column-Product-Description.mat-column-Product-Description ul li i{ 
+  font-family: 'Poppins', sans-serif !important;
+  font-style:normal;
+}

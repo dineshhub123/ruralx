@@ -6,7 +6,6 @@
     margin-bottom: 15px;
  }
 .sidbarheader{
-    font-family: 'Courier New', Courier, monospace;
     color: white;
     font-size: 26px;
     font-weight: 100;
@@ -23,7 +22,6 @@
     color: black;
     text-align: center;
     line-height: 41px;
-    font-family: 'Roboto';
     font-size: 24px;
     font-weight: bold;
 
@@ -31,7 +29,6 @@
 .userAccountName{
     float: left;
     margin-left: 15px;
-    font-family: 'Roboto';
     font-size: 24px;
     font-weight: bold;
     text-transform: capitalize;
@@ -51,7 +48,6 @@
 .sidenav-content{
     list-style: none;
     text-transform: uppercase;
-    font-family: 'Roboto';
     display: inline-block;
 
 }
@@ -75,7 +71,6 @@ padding-bottom: 15px;
 margin-bottom: 50px;
 font-size: 16px;
 font-weight: 900;
-font-family: 'Roboto';
 }
 .version-content{
     color:gray;
@@ -84,7 +79,4 @@ font-family: 'Roboto';
     margin-bottom: 50px;
     font-size: 12px;
     font-weight: 600;
-    font-family: 'Roboto';
-
-
 }
