@@ -19,10 +19,6 @@ public buyerUsername: any;
   buyProduct() {
     this.apiService.getUserBuyerDetails().subscribe((Response: any) => {
      this.sellItemData = Response
-    //  let userlistData=this.sellItemData.map((item: any) => 
-    //  item.user_first_name)
-    //  let removeDuplicates=new Set(userlistData)
-    //  this.buyerUsername=[...removeDuplicates];
     })
 
   }
