@@ -8,4 +8,5 @@ table {
 img.img-responsive.img-tbl {
     width: 60px;
     height: 50px;
+    border:1px solid #ddd;
 }

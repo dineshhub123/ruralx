@@ -42,7 +42,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {AngularEditorModule } from '@kolkov/angular-editor';
 import { ReplacePathPipe } from './replace-path.pipe';
 import { MatTableModule } from '@angular/material/table';
-
+import { SellNotificationlistComponent } from './sell-notificationlist/sell-notificationlist.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -68,6 +71,7 @@ import { MatTableModule } from '@angular/material/table';
     DisplaySearchItemComponent,
     UploadComponent,
     ReplacePathPipe,
+    SellNotificationlistComponent,
   ],
 
   imports: [
@@ -87,6 +91,9 @@ import { MatTableModule } from '@angular/material/table';
     MatIconModule,
     MatSidenavModule,
     AngularEditorModule,
+    MatBadgeModule,
+    MatMenuModule,
+    MatListModule,
     //SidebarJSModule.forRoot(),
     RouterModule.forRoot([
       {path:"",component:DashboardComponent},
@@ -110,6 +117,11 @@ import { MatTableModule } from '@angular/material/table';
         {
           path: 'sell-notification',
           component: SellNotificationComponent
+        }
+        ,
+         {
+          path: 'sell-notificationlist',
+          component: SellNotificationlistComponent
         }
       ],
       canActivate: [AuthGuard]},
