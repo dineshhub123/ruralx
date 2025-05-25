@@ -72,15 +72,14 @@ const uploadData= new FormData();
     this.apiService.getUserBuyerDetails().subscribe((Response: any) => {
      this.sellItemData = Response
      let userlistData=this.sellItemData.map((item: any) => 
-     item.user_phone)
+     item.user_first_name)
      let removeDuplicates=new Set(userlistData)
      this.buyerUsername=[...removeDuplicates];
     this.getNotifyUserArray = []; 
      for (let i = 0; i < this.buyerUsername.length; i++) {
-    let  getNotifyUser=this.sellItemData.find((item:any) => item.user_phone=== this.buyerUsername[i])
+    let  getNotifyUser=this.sellItemData.find((item:any) => item.user_first_name=== this.buyerUsername[i])
     if (getNotifyUser) {
     this.getNotifyUserArray.push(getNotifyUser);
-    console.log("getObject", this.getNotifyUserArray);
   }
    
     }

@@ -46,6 +46,7 @@ import { SellNotificationlistComponent } from './sell-notificationlist/sell-noti
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatBadgeModule,
     MatMenuModule,
     MatListModule,
+    MatTooltipModule,
     //SidebarJSModule.forRoot(),
     RouterModule.forRoot([
       {path:"",component:DashboardComponent},
