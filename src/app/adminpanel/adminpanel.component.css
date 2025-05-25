@@ -171,7 +171,4 @@ a.notificuser {
 ::ng-deep #mat-menu-panel-0 {
     height: 360px !important;
 }
-::ng-deep .mat-icon:hover {
-    color: white !important;
-}
 

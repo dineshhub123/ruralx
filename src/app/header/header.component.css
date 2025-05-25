@@ -1,8 +1,6 @@
 ::ng-deep
 .mat-drawer-inner-container {
   width:330px !important;
-  /* height: 1200px !important; 
-  overflow-y: scroll !important;*/
 }
 .cart-account-align{
   position: absolute;
@@ -14,16 +12,15 @@
 }
 .mat-drawer-container{
   position: relative !important;
-  /* display: inline !important; */
-  height: 670px;
-  overflow-y: scroll;
+  /* height: 670px;
+  overflow-y: scroll; */
+  height: auto;
+  overflow:hidden;
 }
 .navbar-inverse{
   width: 100%;
   background-color:#040466;
   border-radius: 0 !important;
-  /* padding-bottom: 35px;
-  margin-bottom: 15px; */
 }
 .navbar-inverse-sidenav{
   background-color:rgb(8 64 115);
