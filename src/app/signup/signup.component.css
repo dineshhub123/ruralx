@@ -1,12 +1,10 @@
 .text-font{
-    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: .156rem;
     font-size: 1.125rem;
     }
     .text-price{
     padding: 0 .625rem;
-    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
     font-style: normal;
     font-size: .75rem;
     font-weight: 700;
@@ -14,7 +12,6 @@
     letter-spacing: 1.6px;
     }
     .text-descriptions{
-    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
     font-style: normal;
     font-size: .75rem;
     font-weight: 400;
@@ -27,7 +24,6 @@
     border-color: #4e4e4e ;
     }
     .button-order{
-    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
     font-style: normal;
     font-size: 24px;
     font-weight: 700;

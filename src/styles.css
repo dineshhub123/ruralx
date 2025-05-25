@@ -12,6 +12,22 @@ html, body { height: 100%; font-family: "Poppins", sans-serif !important;}
 height: 760px;
 overflow:scroll;
 }
+
+::ng-deep mat-table, 
+::ng-deep mat-header-row, 
+::ng-deep mat-row, 
+::ng-deep mat-cell, 
+::ng-deep mat-header-cell {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Apply Poppins to the entire mat-table */
+mat-table, mat-header-row, mat-row, mat-cell, mat-header-cell {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
 } 
+
 
 
