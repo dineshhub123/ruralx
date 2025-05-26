@@ -1,0 +1,40 @@
+/* Container */
+.address-form {
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 0 16px;
+}
+
+/* Common field widths */
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 100%;
+}
+
+/* Flex row for side-by-side fields */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  margin-bottom: 16px;
+}
+
+/* Make mat-form-field fill its parent */
+mat-form-field {
+  flex: 1 1 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .half-width {
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

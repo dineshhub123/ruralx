@@ -47,6 +47,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FirstLiPipePipe } from './first-li-pipe.pipe';
+import { FullLiPipe } from './full-li.pipe';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     UploadComponent,
     ReplacePathPipe,
     SellNotificationlistComponent,
+    FirstLiPipePipe,
+    FullLiPipe,
   ],
 
   imports: [

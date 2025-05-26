@@ -35,4 +35,15 @@ mat-table, mat-header-row, mat-row, mat-cell, mat-header-cell {
 ::ng-deep td.mat-mdc-cell.mdc-data-table__cell.cdk-cell.wide-column.innercontent.cdk-column-Product-Description.mat-column-Product-Description ul li i{ 
   font-family: 'Poppins', sans-serif !important;
   font-style:normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  list-style: none !important;
+  cursor: pointer;
 }
+td.mat-mdc-cell.mdc-data-table__cell.cdk-cell.wide-column.innercontent.cdk-column-Product-Description.mat-column-Product-Description {
+    list-style: none;
+    cursor: pointer;
+}
+
