@@ -20,7 +20,10 @@ export class ApiService {
   apiProductNotifyURL:string = environment.getProductNotifyApiUrl;
   apiProductbuyerURL:string = environment.productBuyerApiUrl;
   apiBuyerDataURL:string = environment.getBuyerDataApiUrl;
-
+  apiShippingAddressURL:string = environment.insertshippingAddressApiUrl;
+  apiGetShippingAddressURL:string = environment.getShippingAddressApiUrl;
+  apiUpdateShippingAddressURL:string = environment.updateShippingAddressApiUrl
+  apiDeleteShippingAddressURL:string = environment.deleteShippingAddressApiUrl
   constructor(private http: HttpClient,private router:Router) { }
   
   commonHeaderFunction(){
@@ -66,4 +69,17 @@ export class ApiService {
   getUserBuyerDetails():Observable<any> {
     return this.http.get(this.apiBuyerDataURL).pipe(map((res:any)=>res))
   }
+  insertShippingAddress(object:any): Observable<any> {
+    return this.http.post(this.apiShippingAddressURL,object).pipe(map((res: any) => res));
+  }
+  getShippingAddress():Observable<any> {
+    return this.http.get(this.apiGetShippingAddressURL).pipe(map((res:any)=>res))
+  }
+  updateShippingAddress(object:any): Observable<any> {
+    return this.http.post(this.apiUpdateShippingAddressURL,object).pipe(map((res: any) => res));
+  }
+  deleteShippingAddress(object:any): Observable<any> {
+    return this.http.post(this.apiDeleteShippingAddressURL,object).pipe(map((res: any) => res));
+  }
+
 }
