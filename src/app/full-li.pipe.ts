@@ -9,6 +9,7 @@ export class FullLiPipe implements PipeTransform {
   if (!html) return '';
 
   const div = document.createElement('div');
+ // 👈 Add your custom class here
   div.innerHTML = html;
 
   // Function to recursively clean &nbsp; (non-breaking space) chars in text nodes
