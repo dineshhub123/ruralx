@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
-
 @Component({
   selector: 'app-useraddress',
   templateUrl: './useraddress.component.html',
@@ -9,16 +8,28 @@ import { ApiService } from '../api.service';
 })
 export class UseraddressComponent implements OnInit {
   public addShipTextForm: boolean = false
+  public  addCartData: any;
+  couponFormControl = new FormControl('');
+
   public editId: any = Number
   public addressForm: FormGroup;
+  public radioForm: FormGroup;
   public editbtn: boolean = false
   public exiestShipment: any = [];
   public loginUserAddress: any = [];
   public selectedAddress = "defaultAddress"
   constructor(private fb: FormBuilder, private apiService: ApiService) {
+    let cartItem: any;
+    cartItem = localStorage.getItem('cart_items')
+    this.addCartData = JSON.parse(cartItem)
+    console.log(this.addCartData)
     let userAdd: any
     userAdd = localStorage.getItem("shiping_address")
     this.exiestShipment = JSON.parse(userAdd);
+    this.radioForm = new FormGroup({
+      radioOption: new FormControl('')
+    });
+
     this.addressForm = this.fb.group({
       fullName: ['', Validators.required],
       streetAddress: ['', Validators.required],
@@ -69,7 +80,7 @@ export class UseraddressComponent implements OnInit {
           this.addShipTextForm = false;
           this.addressForm.reset();
           this.getshipDetails();
-        }, 500)
+        }, 100)
       }
     }
   }
@@ -79,6 +90,10 @@ export class UseraddressComponent implements OnInit {
     userAddress = localStorage.getItem("login_user")
     let address = JSON.parse(userAddress)
     this.loginUserAddress.push(address)
+    this.radioForm = new FormGroup({
+      radioOption: new FormControl(this.loginUserAddress[0])
+    });
+
   }
   getshipDetails() {
     this.apiService.getShippingAddress().subscribe((res: any) => {
@@ -112,7 +127,7 @@ export class UseraddressComponent implements OnInit {
     this.addressForm.reset();
     setTimeout(() => {
       this.getshipDetails()
-    },100)
+    }, 100)
   }
   editShipAddress(ship: any) {
     this.editId = ship?.id
@@ -137,13 +152,13 @@ export class UseraddressComponent implements OnInit {
     this.apiService.deleteShippingAddress(deletePayload).subscribe((res: any) => { })
     setTimeout(() => {
       this.getshipDetails()
-    },100)
+    }, 100)
 
   }
   addShippingAddress() {
     this.addShipTextForm = !this.addShipTextForm;
   }
-  confirmOrder(){
-    console.log(this.selectedAddress)
+  confirmOrder() {
+    console.log(this.radioForm?.value?.radioOption)
   }
 }

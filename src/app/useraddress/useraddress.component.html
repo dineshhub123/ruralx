@@ -77,40 +77,40 @@
 <button mat-raised-button color="primary" class="float-right ml-2" type="submit" *ngIf="!editbtn" (click)="onSubmitAddress(addressForm)">Add</button>
 </form>
 <br>
+<form [formGroup]="radioForm">
 <div *ngIf="loginUserAddress[0] !== null">
 <div class="address-form saveAddress mb-2" style="background-color: #d5e3da;" *ngFor="let user of loginUserAddress">
 <div class="row align-items-center" >
   <!-- Radio Button -->
   <div class="col-2 col-md-1 d-flex justify-content-center mb-2 mb-md-0">
-  <input type="radio" name="shippingAdd" value="defaultAddress" [(ngModel)]="selectedAddress" />
+    <input type="radio" formControlName="radioOption" [value]="user">
   </div>
-
   <!-- Address List -->
   <div class="col-10 col-md-7 mb-2 mb-md-0 mb-2">
-    <div>{{user?.user_first_name}}{{user?.user_last_name}}</div>
+    <div>{{user?.user_first_name|titlecase}} {{user?.user_last_name|titlecase}}</div>
     <div>{{user?.user_phone}}</div>
-    <div>{{user?.user_address}}</div>
+    <div>{{user?.user_email}}</div>
+    <div>{{user?.user_address|titlecase}}</div>
     <div>{{user?.user_pincode}}</div>
   </div>
 </div>
-
 </div>
 </div>
 <div *ngIf="loginUserAddress[0]!== null || exiestShipment?.length > 0">
 <div class="address-form saveAddress mb-2" *ngFor="let ship of exiestShipment">
   <div class="row">
   <div class="col-2 col-md-1 d-flex justify-content-center mb-2 mb-md-0">
-  <input type="radio" name="shippingAdd" value="optionalAddress" [(ngModel)]="selectedAddress" />
+  <input type="radio" formControlName="radioOption" [value]="ship">
   </div>
  <div class="col-10 col-md-7 mb-md-0 mb-2">
-  <div>{{ship?.shipment_fullname}}</div>
+  <div>{{ship?.shipment_fullname |titlecase}}</div>
   <div>{{ship?.shipment_mobile}}</div>
-  <div>{{ship?.shipment_state}}</div>
-  <div>{{ship?.shipment_streetAddress}}</div>
-  <div>{{ship?.shipment_city}}</div>
+  <div>{{ship?.shipment_state|titlecase}}</div>
+  <div>{{ship?.shipment_streetAddress|titlecase}}</div>
+  <div>{{ship?.shipment_city|titlecase}}</div>
   <div>{{ship?.shipment_zipcode}}</div>
-  <div>{{ship?.shipment_country}}</div>
-  <div>{{ship?.shipment_additonalNote}}</div>
+  <div>{{ship?.shipment_country|titlecase}}</div>
+  <div>{{ship?.shipment_additonalNote|titlecase}}</div>
   </div>
   <div class="col-6 col-md-2 d-flex align-items-center justify-content-start"> 
      <mat-icon  style="color:#70e39c" aria-label="Edit" (click)="editShipAddress(ship)">edit</mat-icon>edit</div>
@@ -119,16 +119,28 @@
   </div>
 </div>
 </div>
+</form>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-4" *ngIf="loginUserAddress[0]!==null">
 <div class="address-form total-summary" >
 <h2>Total Summary</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div>
+  SubTotal : 1200
+</div>
+<div>
+  Discount : 200
+</div>
+<div>
+  Shipping Fee : 20
+</div>
+<div>
+<form class="example-form">
+  <mat-form-field class="example-full-width" >
+    <input type="text" matInput [formControl]="couponFormControl" placeholder="Enter Coupon Code">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="float-right" type="submit">Apply</button>
+</form>
+</div>
 <br>
 <button mat-raised-button color="primary" class="float-right" type="submit" (click)="confirmOrder()">Confirm Order</button>
 </div>
