@@ -7,15 +7,12 @@
   right: 15px;
   top:15px;
 }
-.mat-drawer-content{
- overflow-x: hidden;
-}
+
 .mat-drawer-container{
   position: relative !important;
   /* height: 670px;
   overflow-y: scroll; */
   height: auto;
-  overflow:hidden;
 }
 .navbar-inverse{
   width: 100%;

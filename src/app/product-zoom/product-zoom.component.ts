@@ -64,7 +64,7 @@ export class ProductZoomComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,
   ) {
     let itemZoom: any;
-    itemZoom = localStorage.getItem('cart-item')
+    itemZoom = localStorage.getItem('selected-item')
     this.cartItem = JSON.parse(itemZoom)
     // this.http.get("http://localhost/employee.php").subscribe(data => {
     // this.data.push(data);
