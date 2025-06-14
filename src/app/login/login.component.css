@@ -1,12 +1,139 @@
-.btn-dark {
-   background-color: rgb(69, 186, 98);
-   border: 0px !important;
+/* General Styles */
+
+
+.card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.loginErr {
-   font-size: 15px;
-   font-weight: 500;
-   color: rgb(21, 93, 95);
-   text-align: center;
+.card:hover {
+  transform: translateY(-5px);
+}
 
+/* Left Side Image (you can add a background image later) */
+.col-md-6.col-lg-5.d-none.d-md-block {
+  background: url('/assets/img/logo.png') no-repeat center center;
+  background-size: 100%;
+    background-color: #062d51;
+    width: 80%;
+}
+
+/* Form Styling */
+.card-body {
+  padding: 2.5rem !important;
+}
+
+.h1.fw-bold {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.h5.fw-normal {
+  color: #7f8c8d;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Input Fields */
+.form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #dfe6e9;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #00b894;
+  box-shadow: 0 0 0 0.2rem rgba(0, 184, 148, 0.25);
+}
+
+.form-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #95a5a6;
+  transition: all 0.3s;
+  pointer-events: none;
+  background: white;
+  padding: 0 5px;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #00b894;
+}
+
+/* Button Styling */
+.btn-success {
+  background-color: #00b894;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #009d7a;
+  transform: translateY(-2px);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+}
+
+/* Links Styling */
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small.text-muted {
+  font-size: 0.85rem;
+}
+
+/* Error Message */
+.loginErr {
+  height: 20px;
+  margin-top: 0.5rem;
+}
+
+mat-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .h1.fw-bold {
+    font-size: 2rem;
+  }
 }

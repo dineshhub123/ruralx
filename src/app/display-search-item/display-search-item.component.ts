@@ -24,7 +24,7 @@ export class DisplaySearchItemComponent implements OnInit {
 
   }
   imgClick(item:any){
-    localStorage.setItem('cart-item',JSON.stringify(item))
+    localStorage.setItem('selected-item',JSON.stringify(item))
     this.router.navigate(['pzoom'])
   }
 }
