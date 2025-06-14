@@ -49,7 +49,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FirstLiPipePipe } from './first-li-pipe.pipe';
 import { FullLiPipe } from './full-li.pipe';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +101,13 @@ import { FullLiPipe } from './full-li.pipe';
     MatMenuModule,
     MatListModule,
     MatTooltipModule,
+    MatMenuModule, 
+    MatListModule, 
+    MatBadgeModule,  
+    MatTooltipModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatToolbarModule,
     //SidebarJSModule.forRoot(),
     RouterModule.forRoot([
       {path:"",component:DashboardComponent},
