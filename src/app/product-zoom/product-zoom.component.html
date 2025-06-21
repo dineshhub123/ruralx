@@ -1,8 +1,6 @@
-<div class="zoom_right_inner_panel">
-  <img (click)="show()" class="child_img_display" style="width:250px;height:250px;"
-    src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
-  <div style="text-align: center;">Click over image to Expand</div>
-</div>
+<div class="container-fluid mb-5">
+<div class="row">
+  <div class="col-md-1">
 <div class="zoom_left_inner_panel">
   <!-- <span class="child_img" (mouseover)="ChildMasterDisplay(cartItem.product_img)"><img style="width:35px;height:40px;"
       src="assets/img/{{cartItem.product_img}}"></span> -->
@@ -17,39 +15,18 @@
   <span class="child_img" (mouseover)="ChildTriangleDisplay(cartItem.img_triangle)"><img style="width:35px;height:40px;"
       src="{{cartItem.img_triangle | replacePath:'ruralx/src':'..'}}"></span>
 </div>
-
-<!-- <a (click) = "show()">
-    <img id="imageresource" src="https://therichpost.com/wp-content/uploads/2019/09/Angular-8-custom-accordion-working-example-364x225.png" style="width: 125px; height: 125px;">
-    Click to Enlarge
-  </a> -->
-<!-- Creates the bootstrap modal where the image will appear -->
-<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
-  aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="position: relative;top:106px;">
-      <div class="modal-header" style="height: 60px;">
-        <h4 class="modal-title" id="myModalLabel">{{cartItem.product_name}}</h4>
-      </div>
-      <div class="pop-up-model">
-        <img class="child_img_display" style="width:330px;height:340px;" src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
-
-      </div>
-      <div class="modal-footer" style="height: 60px;color:teal;font-weight: 700;">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="hide()">Close</button>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
 </div>
-
-
-<div class="col-sm-6 py-10">
+ <div class="col-md-5">
+<div class="zoom_right_inner_panel py-3">
+  <img (click)="show()" class="child_img_display" style="height:480px;"
+    src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
+  <div class="image-expand">Click over image to Expand</div>
+</div>
+</div>
+<div class="col-md-6  py-3">
   <div class="zoom_right_panel">
     <div class="card-body">
-      <h5 class="card-title_1"><strong>{{cartItem.product_name}}</strong></h5>
+      <h5 class="card-title_1"><strong>{{cartItem.product_name | titlecase}}</strong></h5>
       <p><span class="rates">₹ {{cartItem.product_price}} </span>
         <span> </span> M.R.P : ₹ <del>
           {{cartItem.product_mrp_price}}</del>
@@ -64,7 +41,7 @@
     <strong>Product Description</strong>
    <div [innerHTML]="cartItem.product_description"></div>
   </div>
-  <div class="zoom_addcart_panel">
+    <div class="zoom_addcart_panel">
     <nav aria-label="quantity-navigation">
       <h5><strong>Quantity:</strong></h5>
       <ul class="pagination">
@@ -84,16 +61,55 @@
     &nbsp;
     <br>
     <br>
-    <button class="btn btn-warning btn-md" (click)="addCart(cartItem)"><i class="fa fa-shopping-cart"> </i> ADD TO CART
+    <button class="btn btn-warning btn-md mb-2 mr-2 btn-align-buy" (click)="addCart(cartItem)"><i class="fa fa-shopping-cart"> </i> ADD TO CART
     </button>
-    <button class="btn btn-danger btn-md" style="margin-left:5px;" (click)="addDetails()"><i class="fa fa-credit-card"
+    <button class="btn btn-danger btn-md mb-2 btn-align-buy" (click)="addDetails()"><i class="fa fa-credit-card"
         aria-hidden="true"></i> BUY NOW</button>
     <div> <strong
         style="color:red;font-size: 13px;"> Secure
         Transaction </strong></div>
   </div>
-  &nbsp;
-  &nbsp;
-  <br>
-  <br>
+  </div>
 </div>
+<!-- <a (click) = "show()">
+    <img id="imageresource" src="https://therichpost.com/wp-content/uploads/2019/09/Angular-8-custom-accordion-working-example-364x225.png" style="width: 125px; height: 125px;">
+    Click to Enlarge
+  </a> -->
+<!-- Creates the bootstrap modal where the image will appear -->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="position: relative;top:106px;">
+      <div class="modal-header" style="height: 60px;">
+        <h4 class="modal-title" id="myModalLabel">{{cartItem.product_name |titlecase}}</h4>
+        <div class="modal-footer" style="height: 60px;color:teal;font-weight: 700;">
+        <!-- <button type="button" class="btn btn-info" data-dismiss="modal" (click)="hide()"> -->
+          <mat-icon  class="cross-close" data-dismiss="modal" (click)="hide()">close</mat-icon>
+        <!-- </button> -->
+      </div>
+
+      </div>
+      <div class="pop-up-model">
+        <img class="child_img_display" style="width:280px;height: 300px;" src="{{cartItem.img_front | replacePath:'ruralx/src':'..'}}">
+
+      </div>
+      <!-- <div class="modal-footer" style="height: 60px;color:teal;font-weight: 700;">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="hide()">Close</button>
+      </div> -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+</div>
+
+<!-- <div class="col-sm-6 py-10">
+
+
+  &nbsp;
+  &nbsp;
+  <br>
+  <br>
+</div> -->
